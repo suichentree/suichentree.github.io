@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>java运行shell脚本 | suichenTree BLOG</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="(;-_-)ᴇᴍᴍᴍ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.831e1d62.css" as="style"><link rel="preload" href="/assets/js/app.54bffa5d.js" as="script"><link rel="preload" href="/assets/js/15.522c722b.js" as="script"><link rel="preload" href="/assets/js/1.e9c88d96.js" as="script"><link rel="preload" href="/assets/js/103.14ff9609.js" as="script"><link rel="prefetch" href="/assets/js/10.cdbec67d.js"><link rel="prefetch" href="/assets/js/100.4010f8bf.js"><link rel="prefetch" href="/assets/js/101.f55f28f7.js"><link rel="prefetch" href="/assets/js/102.fe99bfe3.js"><link rel="prefetch" href="/assets/js/104.66acbf5f.js"><link rel="prefetch" href="/assets/js/105.da0e3b10.js"><link rel="prefetch" href="/assets/js/106.edec6771.js"><link rel="prefetch" href="/assets/js/107.8217e118.js"><link rel="prefetch" href="/assets/js/108.f93be6ba.js"><link rel="prefetch" href="/assets/js/109.7fb5f378.js"><link rel="prefetch" href="/assets/js/11.b1a0d044.js"><link rel="prefetch" href="/assets/js/110.93669140.js"><link rel="prefetch" href="/assets/js/111.87c47701.js"><link rel="prefetch" href="/assets/js/112.add5ab48.js"><link rel="prefetch" href="/assets/js/113.845b7d6d.js"><link rel="prefetch" href="/assets/js/114.30e2eab4.js"><link rel="prefetch" href="/assets/js/115.1681f3d8.js"><link rel="prefetch" href="/assets/js/116.3dd301a2.js"><link rel="prefetch" href="/assets/js/117.5eeee0ae.js"><link rel="prefetch" href="/assets/js/118.7b582ef1.js"><link rel="prefetch" href="/assets/js/119.6cddafd6.js"><link rel="prefetch" href="/assets/js/12.94a54668.js"><link rel="prefetch" href="/assets/js/120.1d5513c1.js"><link rel="prefetch" href="/assets/js/121.12079a4c.js"><link rel="prefetch" href="/assets/js/122.871c7a5e.js"><link rel="prefetch" href="/assets/js/123.cc5106a6.js"><link rel="prefetch" href="/assets/js/124.c37bef54.js"><link rel="prefetch" href="/assets/js/125.65cf7eee.js"><link rel="prefetch" href="/assets/js/126.68f04e8f.js"><link rel="prefetch" href="/assets/js/127.71e37587.js"><link rel="prefetch" href="/assets/js/128.ef6d6334.js"><link rel="prefetch" href="/assets/js/129.cdeb847e.js"><link rel="prefetch" href="/assets/js/13.c270db79.js"><link rel="prefetch" href="/assets/js/130.71f0a0a3.js"><link rel="prefetch" href="/assets/js/131.dd8f6a78.js"><link rel="prefetch" href="/assets/js/132.4d009532.js"><link rel="prefetch" href="/assets/js/133.6714afa0.js"><link rel="prefetch" href="/assets/js/134.f4c869be.js"><link rel="prefetch" href="/assets/js/135.48eee06e.js"><link rel="prefetch" href="/assets/js/136.7ab0042e.js"><link rel="prefetch" href="/assets/js/137.5871cba3.js"><link rel="prefetch" href="/assets/js/138.9d77ec89.js"><link rel="prefetch" href="/assets/js/139.9fa78e67.js"><link rel="prefetch" href="/assets/js/14.3e58faec.js"><link rel="prefetch" href="/assets/js/140.d8ae8d41.js"><link rel="prefetch" href="/assets/js/141.8ce0885d.js"><link rel="prefetch" href="/assets/js/142.cd550e51.js"><link rel="prefetch" href="/assets/js/143.dbf89d2b.js"><link rel="prefetch" href="/assets/js/144.5e84fbe1.js"><link rel="prefetch" href="/assets/js/145.3e0e3b3f.js"><link rel="prefetch" href="/assets/js/146.75056924.js"><link rel="prefetch" href="/assets/js/147.c3c5275c.js"><link rel="prefetch" href="/assets/js/148.68ce2d70.js"><link rel="prefetch" href="/assets/js/149.dcc3ed29.js"><link rel="prefetch" href="/assets/js/150.da481b5e.js"><link rel="prefetch" href="/assets/js/151.edb8dfc5.js"><link rel="prefetch" href="/assets/js/152.1fe329d4.js"><link rel="prefetch" href="/assets/js/153.fb89e282.js"><link rel="prefetch" href="/assets/js/154.d6b354ce.js"><link rel="prefetch" href="/assets/js/155.815dc121.js"><link rel="prefetch" href="/assets/js/156.277cc2d3.js"><link rel="prefetch" href="/assets/js/157.39018980.js"><link rel="prefetch" href="/assets/js/158.611eea94.js"><link rel="prefetch" href="/assets/js/16.705cdc89.js"><link rel="prefetch" href="/assets/js/17.0eb10ac5.js"><link rel="prefetch" href="/assets/js/18.8731857b.js"><link rel="prefetch" href="/assets/js/19.4f4258d7.js"><link rel="prefetch" href="/assets/js/20.f6f538fe.js"><link rel="prefetch" href="/assets/js/21.18dec82e.js"><link rel="prefetch" href="/assets/js/22.25e84e6e.js"><link rel="prefetch" href="/assets/js/23.03d703b5.js"><link rel="prefetch" href="/assets/js/24.0772f5c9.js"><link rel="prefetch" href="/assets/js/25.ce79cfb6.js"><link rel="prefetch" href="/assets/js/26.9e9636b0.js"><link rel="prefetch" href="/assets/js/27.9f37ac52.js"><link rel="prefetch" href="/assets/js/28.cf90362b.js"><link rel="prefetch" href="/assets/js/29.b6ec709c.js"><link rel="prefetch" href="/assets/js/3.7c4bdf1a.js"><link rel="prefetch" href="/assets/js/30.36061f5e.js"><link rel="prefetch" href="/assets/js/31.50267b8b.js"><link rel="prefetch" href="/assets/js/32.62e7be11.js"><link rel="prefetch" href="/assets/js/33.7b13fd19.js"><link rel="prefetch" href="/assets/js/34.ea7f75eb.js"><link rel="prefetch" href="/assets/js/35.b52bd46f.js"><link rel="prefetch" href="/assets/js/36.0a9246e3.js"><link rel="prefetch" href="/assets/js/37.43c35e92.js"><link rel="prefetch" href="/assets/js/38.28329dac.js"><link rel="prefetch" href="/assets/js/39.cf9557ee.js"><link rel="prefetch" href="/assets/js/4.03a63123.js"><link rel="prefetch" href="/assets/js/40.584c432a.js"><link rel="prefetch" href="/assets/js/41.559d7613.js"><link rel="prefetch" href="/assets/js/42.2b474c23.js"><link rel="prefetch" href="/assets/js/43.38f7c93d.js"><link rel="prefetch" href="/assets/js/44.0908ead5.js"><link rel="prefetch" href="/assets/js/45.26a03caa.js"><link rel="prefetch" href="/assets/js/46.7221d5e0.js"><link rel="prefetch" href="/assets/js/47.67a10c5c.js"><link rel="prefetch" href="/assets/js/48.ff5143ec.js"><link rel="prefetch" href="/assets/js/49.da3e997c.js"><link rel="prefetch" href="/assets/js/5.69c366fc.js"><link rel="prefetch" href="/assets/js/50.0d75bcb4.js"><link rel="prefetch" href="/assets/js/51.3e03bb8a.js"><link rel="prefetch" href="/assets/js/52.6a5347e5.js"><link rel="prefetch" href="/assets/js/53.42f3012c.js"><link rel="prefetch" href="/assets/js/54.9efd632b.js"><link rel="prefetch" href="/assets/js/55.df609269.js"><link rel="prefetch" href="/assets/js/56.4d9db86d.js"><link rel="prefetch" href="/assets/js/57.e83558dd.js"><link rel="prefetch" href="/assets/js/58.921d2ccc.js"><link rel="prefetch" href="/assets/js/59.a7f32b4b.js"><link rel="prefetch" href="/assets/js/6.f10e3f96.js"><link rel="prefetch" href="/assets/js/60.5bcda07b.js"><link rel="prefetch" href="/assets/js/61.64cb9940.js"><link rel="prefetch" href="/assets/js/62.61f342f2.js"><link rel="prefetch" href="/assets/js/63.a7934f1e.js"><link rel="prefetch" href="/assets/js/64.c7aa3193.js"><link rel="prefetch" href="/assets/js/65.d28641a4.js"><link rel="prefetch" href="/assets/js/66.f1622399.js"><link rel="prefetch" href="/assets/js/67.d4e2c002.js"><link rel="prefetch" href="/assets/js/68.f93203cf.js"><link rel="prefetch" href="/assets/js/69.a050f86d.js"><link rel="prefetch" href="/assets/js/7.2b28f8bf.js"><link rel="prefetch" href="/assets/js/70.449c97f2.js"><link rel="prefetch" href="/assets/js/71.6776ebba.js"><link rel="prefetch" href="/assets/js/72.bc17d663.js"><link rel="prefetch" href="/assets/js/73.c2f9c7f9.js"><link rel="prefetch" href="/assets/js/74.0d1ced8f.js"><link rel="prefetch" href="/assets/js/75.ba7709a4.js"><link rel="prefetch" href="/assets/js/76.850234a8.js"><link rel="prefetch" href="/assets/js/77.1bc66139.js"><link rel="prefetch" href="/assets/js/78.fee1929f.js"><link rel="prefetch" href="/assets/js/79.07281859.js"><link rel="prefetch" href="/assets/js/8.831a93b3.js"><link rel="prefetch" href="/assets/js/80.3d5565e7.js"><link rel="prefetch" href="/assets/js/81.d0d99a65.js"><link rel="prefetch" href="/assets/js/82.d29c776e.js"><link rel="prefetch" href="/assets/js/83.4cdd1106.js"><link rel="prefetch" href="/assets/js/84.bd43e278.js"><link rel="prefetch" href="/assets/js/85.08b3c530.js"><link rel="prefetch" href="/assets/js/86.1b00ff9e.js"><link rel="prefetch" href="/assets/js/87.76b92fa0.js"><link rel="prefetch" href="/assets/js/88.0286e1ed.js"><link rel="prefetch" href="/assets/js/89.1c4359b1.js"><link rel="prefetch" href="/assets/js/9.b6cf7899.js"><link rel="prefetch" href="/assets/js/90.7c158f9c.js"><link rel="prefetch" href="/assets/js/91.474c75ce.js"><link rel="prefetch" href="/assets/js/92.4b017ea2.js"><link rel="prefetch" href="/assets/js/93.fd833f99.js"><link rel="prefetch" href="/assets/js/94.d046bbe2.js"><link rel="prefetch" href="/assets/js/95.d5246413.js"><link rel="prefetch" href="/assets/js/96.1ff480c6.js"><link rel="prefetch" href="/assets/js/97.6ce2c492.js"><link rel="prefetch" href="/assets/js/98.f18a7560.js"><link rel="prefetch" href="/assets/js/99.601df3ad.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.831e1d62.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>suichenTree BLOG</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>suichenTree</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/user.jpg" alt="suichenTree BLOG" class="logo"> <span class="site-name">suichenTree BLOG</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="iconfont undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/系统/" class="nav-link"><i class="iconfont undefined"></i>
+  系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/随笔/" class="nav-link"><i class="iconfont undefined"></i>
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/数据结构/" class="nav-link"><i class="iconfont undefined"></i>
+  算法/数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英文/" class="nav-link"><i class="iconfont undefined"></i>
+  英文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/群晖NAS/" class="nav-link"><i class="iconfont undefined"></i>
+  群晖NAS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="iconfont undefined"></i>
+  vuepress-reco
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/简历/" class="nav-link"><i class="iconfont reco-account"></i>
+  简历
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/面试/" class="nav-link"><i class="iconfont reco-other"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/Java/" class="nav-link"><i class="iconfont reco-other"></i>
+  Java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/sui_chen_tree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:18271801652@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  邮件
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/user.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    suichenTree
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>140</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>49</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="iconfont undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/系统/" class="nav-link"><i class="iconfont undefined"></i>
+  系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/随笔/" class="nav-link"><i class="iconfont undefined"></i>
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/数据结构/" class="nav-link"><i class="iconfont undefined"></i>
+  算法/数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英文/" class="nav-link"><i class="iconfont undefined"></i>
+  英文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/群晖NAS/" class="nav-link"><i class="iconfont undefined"></i>
+  群晖NAS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="iconfont undefined"></i>
+  vuepress-reco
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/简历/" class="nav-link"><i class="iconfont reco-account"></i>
+  简历
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/面试/" class="nav-link"><i class="iconfont reco-other"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/Java/" class="nav-link"><i class="iconfont reco-other"></i>
+  Java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/sui_chen_tree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:18271801652@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  邮件
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>java运行shell脚本</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>suichenTree</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2023
+        </a></span></div></div> <div data-v-2d5f533b><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">java运行shell脚本</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>suichenTree</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2023-01-09</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Linux</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>[toc]</p> <h1 id="java运行shell脚本"><a href="#java运行shell脚本" class="header-anchor">#</a> java运行shell脚本</h1> <p>使用场景：</p> <ul><li>用shell脚本，快速运行，停止，重启jar包。</li> <li>用shell脚本，快速查询当天的日志。</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token shebang important">#!/bin/sh   </span>
+<span class="token comment"># 指此脚本使用/bin/sh来解释执行</span>
+
+<span class="token comment"># 该脚本为Linux下启动java程序的脚本</span>
+<span class="token comment"># 特别注意：</span>
+<span class="token comment"># 该脚本使用系统kill命令来强制终止指定的java程序进程。</span>
+<span class="token comment"># 所以在杀死进程前，可能会造成数据丢失或数据不完整。如果必须要考虑到这类情况，则需要改写此脚本，</span>
+<span class="token comment"># </span>
+<span class="token comment"># 根据实际情况来修改以下配置信息 ##################################</span>
+
+<span class="token comment"># JAVA应用程序的名称</span>
+<span class="token assign-left variable">APP_NAME</span><span class="token operator">=</span>electronic-prescription
+<span class="token comment"># jar包存放路径</span>
+<span class="token assign-left variable">JAR_PATH</span><span class="token operator">=</span><span class="token string">'/home/elec-prcs'</span>
+<span class="token comment"># jar包名称</span>
+<span class="token assign-left variable">JAR_NAME</span><span class="token operator">=</span>electronic-prescription-0.0.1-SNAPSHOT.jar
+
+<span class="token comment"># ######### Shell脚本中$0、$?、$!、$$、$*、$#、$@等的说明 #########</span>
+
+<span class="token comment"># $$ Shell本身的PID（ProcessID，即脚本运行的当前 进程ID号）</span>
+<span class="token comment"># $! Shell最后运行的后台Process的PID(即后台运行的最后一个进程的进程ID号)</span>
+<span class="token comment"># $? 最后运行的命令的结束代码（返回值）即执行上一个指令的返回值 (函数的返回值可以通过$?来获得)</span>
+<span class="token comment"># $- 显示shell使用的当前选项，与set命令功能相同</span>
+<span class="token comment"># $* 所有参数列表。如&quot;$*&quot;用「&quot;」括起来的情况、以&quot;$1 $2 … $n&quot;的形式输出所有参数，此选项参数可超过9个。</span>
+<span class="token comment"># $@ 所有参数列表。如&quot;$@&quot;用「&quot;」括起来的情况、以&quot;$1&quot; &quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数。</span>
+<span class="token comment"># $# 添加到Shell的参数个数</span>
+<span class="token comment"># $0 Shell本身的文件名</span>
+<span class="token comment"># $1～$n 添加到Shell的各参数值。$1是第1参数、$2是第2参数…。</span>
+
+<span class="token comment"># kill与kill -9的区别: </span>
+  <span class="token comment"># kill默认是kill -15。kill -15命令告诉进程，请自行停止运行并退出,会给目标进程一个清理善后工作的机会。</span>
+  <span class="token comment"># kill -9命令告诉进程，请立刻退出。kill -9 可能会留下一些不完整的文件或状态，从而影响服务的再次启动。</span>
+
+
+<span class="token comment"># 检查程序是否处于运行状态。并返回程序进程对应的pid</span>
+<span class="token function-name function">isRun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment"># 查询出对应名称服务的进程id，(添加 -v grep是为了避免匹配到 grep 进程)</span>
+  <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> $JAR_NAME <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $2}'</span> <span class="token variable">`</span></span>
+  <span class="token comment"># [ ]表示条件测试。注意这里的空格很重要。要注意在'['后面和']'前面都必须要有空格</span>
+  <span class="token comment"># [ -z STRING ] 表示：如果STRING的长度为零则返回为真。即变量pid为空是真</span>
+  <span class="token comment"># 如果存在进程id返回进程id，不存在进程id返回0。</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">&quot;<span class="token variable">$pid</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+  <span class="token keyword">then</span>
+    <span class="token builtin class-name">return</span> <span class="token number">0</span>
+  <span class="token keyword">else</span>
+    <span class="token builtin class-name">return</span> <span class="token variable">$pid</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment"># 服务运行状态查看方法</span>
+<span class="token function-name function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  isRun
+  <span class="token comment"># 此处的$?获取的是isRun方法的返回值。0表示没有进程pid，否则有进程pid</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -ne <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+  <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> is running......, pid is <span class="token variable">$pid</span>&quot;</span>
+  <span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> is not running!&quot;</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 服务启动方法</span>
+<span class="token function-name function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  isRun
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -ne <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+  <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> is already running....., pid is <span class="token variable">$pid</span>&quot;</span>
+  <span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;begin run <span class="token variable">$APP_NAME</span> .....&quot;</span>
+    <span class="token comment"># java -jar启动脚本</span>
+    <span class="token comment"># /dev/null指向一个黑洞目录，使得nohup命令不打印本地日志。从而使用jar包中logback的日志配置</span>
+    <span class="token function">nohup</span> java -jar <span class="token variable">$JAR_PATH</span>/<span class="token variable">$JAR_NAME</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+    <span class="token comment"># 输出日志</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> is run success。pid is <span class="token variable">$!</span>&quot;</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 服务停止方法</span>
+<span class="token function-name function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment"># 判断服务进程是否存在</span>
+    isRun
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -ne <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;begin stop <span class="token variable">${APP_NAME}</span>。pid is <span class="token variable">$pid</span>&quot;</span>
+        <span class="token comment"># 若服务进程存在,kill有时停止进程太慢或者无法停止进程</span>
+        <span class="token function">kill</span> <span class="token variable">$pid</span>
+        <span class="token function">sleep</span> <span class="token number">3</span>
+
+        <span class="token comment"># 再次判断进程是否存在</span>
+        isRun
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -ne <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">then</span>
+            <span class="token builtin class-name">echo</span> <span class="token string">&quot;Failed to stop <span class="token variable">${APP_NAME}</span> , begin force stop <span class="token variable">${APP_NAME}</span>, pid is <span class="token variable">$pid</span>&quot;</span>
+            <span class="token function">kill</span> -9 <span class="token variable">$pid</span>
+            <span class="token function">sleep</span> <span class="token number">3</span>
+            <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> force stop success！&quot;</span> 
+        <span class="token keyword">else</span>
+            <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> is stop success！&quot;</span>
+        <span class="token keyword">fi</span>
+    <span class="token keyword">else</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$APP_NAME</span> is not running！&quot;</span>
+    <span class="token keyword">fi</span>
+    
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 重启服务方法</span>
+<span class="token function-name function">restart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment"># 调用服务停止命令</span>
+  stop
+  <span class="token comment"># 调用服务启动命令</span>
+  start
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 展示当天的日志</span>
+<span class="token function-name function">showlog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token assign-left variable">today</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> -d <span class="token string">&quot;now&quot;</span> +<span class="token string">&quot;%Y-%m-%d&quot;</span><span class="token variable">)</span></span>
+  <span class="token function">tail</span> -100f <span class="token string">&quot;elec-prcs-log.<span class="token variable">${today}</span>.0.log&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 帮助说明，用于提示输入参数信息</span>
+<span class="token function-name function">usage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;用法: sh xxx.sh [ status | start | stop | restart | showlog ]&quot;</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">###################################</span>
+<span class="token comment"># 读取脚本的第一个参数($1)，进行判断</span>
+<span class="token comment"># 参数取值范围：{ status | start | stop | restart }</span>
+<span class="token comment"># 如参数不在指定范围之内，则打印帮助信息</span>
+<span class="token comment">###################################</span>
+<span class="token comment">#根据输入参数，选择执行对应方法，其他任何输入参数，都执行帮助说明方法</span>
+<span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token keyword">in</span>
+<span class="token string">'start'</span><span class="token punctuation">)</span>
+start
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">'stop'</span><span class="token punctuation">)</span>
+stop
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">'restart'</span><span class="token punctuation">)</span>
+restart
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">'status'</span><span class="token punctuation">)</span>
+status
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token string">'showlog'</span><span class="token punctuation">)</span>
+showlog
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+*<span class="token punctuation">)</span>
+usage
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">1/10/2023, 11:28:31 AM</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-602aa6ce data-v-602aa6ce><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-602aa6ce><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-602aa6ce></path> <path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-602aa6ce></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      随便看看把
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.54bffa5d.js" defer></script><script src="/assets/js/15.522c722b.js" defer></script><script src="/assets/js/1.e9c88d96.js" defer></script><script src="/assets/js/103.14ff9609.js" defer></script>
+  </body>
+</html>

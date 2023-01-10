@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis基础 | suichenTree BLOG</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="(;-_-)ᴇᴍᴍᴍ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.831e1d62.css" as="style"><link rel="preload" href="/assets/js/app.54bffa5d.js" as="script"><link rel="preload" href="/assets/js/15.522c722b.js" as="script"><link rel="preload" href="/assets/js/1.e9c88d96.js" as="script"><link rel="preload" href="/assets/js/49.da3e997c.js" as="script"><link rel="prefetch" href="/assets/js/10.cdbec67d.js"><link rel="prefetch" href="/assets/js/100.4010f8bf.js"><link rel="prefetch" href="/assets/js/101.f55f28f7.js"><link rel="prefetch" href="/assets/js/102.fe99bfe3.js"><link rel="prefetch" href="/assets/js/103.14ff9609.js"><link rel="prefetch" href="/assets/js/104.66acbf5f.js"><link rel="prefetch" href="/assets/js/105.da0e3b10.js"><link rel="prefetch" href="/assets/js/106.edec6771.js"><link rel="prefetch" href="/assets/js/107.8217e118.js"><link rel="prefetch" href="/assets/js/108.f93be6ba.js"><link rel="prefetch" href="/assets/js/109.7fb5f378.js"><link rel="prefetch" href="/assets/js/11.b1a0d044.js"><link rel="prefetch" href="/assets/js/110.93669140.js"><link rel="prefetch" href="/assets/js/111.87c47701.js"><link rel="prefetch" href="/assets/js/112.add5ab48.js"><link rel="prefetch" href="/assets/js/113.845b7d6d.js"><link rel="prefetch" href="/assets/js/114.30e2eab4.js"><link rel="prefetch" href="/assets/js/115.1681f3d8.js"><link rel="prefetch" href="/assets/js/116.3dd301a2.js"><link rel="prefetch" href="/assets/js/117.5eeee0ae.js"><link rel="prefetch" href="/assets/js/118.7b582ef1.js"><link rel="prefetch" href="/assets/js/119.6cddafd6.js"><link rel="prefetch" href="/assets/js/12.94a54668.js"><link rel="prefetch" href="/assets/js/120.1d5513c1.js"><link rel="prefetch" href="/assets/js/121.12079a4c.js"><link rel="prefetch" href="/assets/js/122.871c7a5e.js"><link rel="prefetch" href="/assets/js/123.cc5106a6.js"><link rel="prefetch" href="/assets/js/124.c37bef54.js"><link rel="prefetch" href="/assets/js/125.65cf7eee.js"><link rel="prefetch" href="/assets/js/126.68f04e8f.js"><link rel="prefetch" href="/assets/js/127.71e37587.js"><link rel="prefetch" href="/assets/js/128.ef6d6334.js"><link rel="prefetch" href="/assets/js/129.cdeb847e.js"><link rel="prefetch" href="/assets/js/13.c270db79.js"><link rel="prefetch" href="/assets/js/130.71f0a0a3.js"><link rel="prefetch" href="/assets/js/131.dd8f6a78.js"><link rel="prefetch" href="/assets/js/132.4d009532.js"><link rel="prefetch" href="/assets/js/133.6714afa0.js"><link rel="prefetch" href="/assets/js/134.f4c869be.js"><link rel="prefetch" href="/assets/js/135.48eee06e.js"><link rel="prefetch" href="/assets/js/136.7ab0042e.js"><link rel="prefetch" href="/assets/js/137.5871cba3.js"><link rel="prefetch" href="/assets/js/138.9d77ec89.js"><link rel="prefetch" href="/assets/js/139.9fa78e67.js"><link rel="prefetch" href="/assets/js/14.3e58faec.js"><link rel="prefetch" href="/assets/js/140.d8ae8d41.js"><link rel="prefetch" href="/assets/js/141.8ce0885d.js"><link rel="prefetch" href="/assets/js/142.cd550e51.js"><link rel="prefetch" href="/assets/js/143.dbf89d2b.js"><link rel="prefetch" href="/assets/js/144.5e84fbe1.js"><link rel="prefetch" href="/assets/js/145.3e0e3b3f.js"><link rel="prefetch" href="/assets/js/146.75056924.js"><link rel="prefetch" href="/assets/js/147.c3c5275c.js"><link rel="prefetch" href="/assets/js/148.68ce2d70.js"><link rel="prefetch" href="/assets/js/149.dcc3ed29.js"><link rel="prefetch" href="/assets/js/150.da481b5e.js"><link rel="prefetch" href="/assets/js/151.edb8dfc5.js"><link rel="prefetch" href="/assets/js/152.1fe329d4.js"><link rel="prefetch" href="/assets/js/153.fb89e282.js"><link rel="prefetch" href="/assets/js/154.d6b354ce.js"><link rel="prefetch" href="/assets/js/155.815dc121.js"><link rel="prefetch" href="/assets/js/156.277cc2d3.js"><link rel="prefetch" href="/assets/js/157.39018980.js"><link rel="prefetch" href="/assets/js/158.611eea94.js"><link rel="prefetch" href="/assets/js/16.705cdc89.js"><link rel="prefetch" href="/assets/js/17.0eb10ac5.js"><link rel="prefetch" href="/assets/js/18.8731857b.js"><link rel="prefetch" href="/assets/js/19.4f4258d7.js"><link rel="prefetch" href="/assets/js/20.f6f538fe.js"><link rel="prefetch" href="/assets/js/21.18dec82e.js"><link rel="prefetch" href="/assets/js/22.25e84e6e.js"><link rel="prefetch" href="/assets/js/23.03d703b5.js"><link rel="prefetch" href="/assets/js/24.0772f5c9.js"><link rel="prefetch" href="/assets/js/25.ce79cfb6.js"><link rel="prefetch" href="/assets/js/26.9e9636b0.js"><link rel="prefetch" href="/assets/js/27.9f37ac52.js"><link rel="prefetch" href="/assets/js/28.cf90362b.js"><link rel="prefetch" href="/assets/js/29.b6ec709c.js"><link rel="prefetch" href="/assets/js/3.7c4bdf1a.js"><link rel="prefetch" href="/assets/js/30.36061f5e.js"><link rel="prefetch" href="/assets/js/31.50267b8b.js"><link rel="prefetch" href="/assets/js/32.62e7be11.js"><link rel="prefetch" href="/assets/js/33.7b13fd19.js"><link rel="prefetch" href="/assets/js/34.ea7f75eb.js"><link rel="prefetch" href="/assets/js/35.b52bd46f.js"><link rel="prefetch" href="/assets/js/36.0a9246e3.js"><link rel="prefetch" href="/assets/js/37.43c35e92.js"><link rel="prefetch" href="/assets/js/38.28329dac.js"><link rel="prefetch" href="/assets/js/39.cf9557ee.js"><link rel="prefetch" href="/assets/js/4.03a63123.js"><link rel="prefetch" href="/assets/js/40.584c432a.js"><link rel="prefetch" href="/assets/js/41.559d7613.js"><link rel="prefetch" href="/assets/js/42.2b474c23.js"><link rel="prefetch" href="/assets/js/43.38f7c93d.js"><link rel="prefetch" href="/assets/js/44.0908ead5.js"><link rel="prefetch" href="/assets/js/45.26a03caa.js"><link rel="prefetch" href="/assets/js/46.7221d5e0.js"><link rel="prefetch" href="/assets/js/47.67a10c5c.js"><link rel="prefetch" href="/assets/js/48.ff5143ec.js"><link rel="prefetch" href="/assets/js/5.69c366fc.js"><link rel="prefetch" href="/assets/js/50.0d75bcb4.js"><link rel="prefetch" href="/assets/js/51.3e03bb8a.js"><link rel="prefetch" href="/assets/js/52.6a5347e5.js"><link rel="prefetch" href="/assets/js/53.42f3012c.js"><link rel="prefetch" href="/assets/js/54.9efd632b.js"><link rel="prefetch" href="/assets/js/55.df609269.js"><link rel="prefetch" href="/assets/js/56.4d9db86d.js"><link rel="prefetch" href="/assets/js/57.e83558dd.js"><link rel="prefetch" href="/assets/js/58.921d2ccc.js"><link rel="prefetch" href="/assets/js/59.a7f32b4b.js"><link rel="prefetch" href="/assets/js/6.f10e3f96.js"><link rel="prefetch" href="/assets/js/60.5bcda07b.js"><link rel="prefetch" href="/assets/js/61.64cb9940.js"><link rel="prefetch" href="/assets/js/62.61f342f2.js"><link rel="prefetch" href="/assets/js/63.a7934f1e.js"><link rel="prefetch" href="/assets/js/64.c7aa3193.js"><link rel="prefetch" href="/assets/js/65.d28641a4.js"><link rel="prefetch" href="/assets/js/66.f1622399.js"><link rel="prefetch" href="/assets/js/67.d4e2c002.js"><link rel="prefetch" href="/assets/js/68.f93203cf.js"><link rel="prefetch" href="/assets/js/69.a050f86d.js"><link rel="prefetch" href="/assets/js/7.2b28f8bf.js"><link rel="prefetch" href="/assets/js/70.449c97f2.js"><link rel="prefetch" href="/assets/js/71.6776ebba.js"><link rel="prefetch" href="/assets/js/72.bc17d663.js"><link rel="prefetch" href="/assets/js/73.c2f9c7f9.js"><link rel="prefetch" href="/assets/js/74.0d1ced8f.js"><link rel="prefetch" href="/assets/js/75.ba7709a4.js"><link rel="prefetch" href="/assets/js/76.850234a8.js"><link rel="prefetch" href="/assets/js/77.1bc66139.js"><link rel="prefetch" href="/assets/js/78.fee1929f.js"><link rel="prefetch" href="/assets/js/79.07281859.js"><link rel="prefetch" href="/assets/js/8.831a93b3.js"><link rel="prefetch" href="/assets/js/80.3d5565e7.js"><link rel="prefetch" href="/assets/js/81.d0d99a65.js"><link rel="prefetch" href="/assets/js/82.d29c776e.js"><link rel="prefetch" href="/assets/js/83.4cdd1106.js"><link rel="prefetch" href="/assets/js/84.bd43e278.js"><link rel="prefetch" href="/assets/js/85.08b3c530.js"><link rel="prefetch" href="/assets/js/86.1b00ff9e.js"><link rel="prefetch" href="/assets/js/87.76b92fa0.js"><link rel="prefetch" href="/assets/js/88.0286e1ed.js"><link rel="prefetch" href="/assets/js/89.1c4359b1.js"><link rel="prefetch" href="/assets/js/9.b6cf7899.js"><link rel="prefetch" href="/assets/js/90.7c158f9c.js"><link rel="prefetch" href="/assets/js/91.474c75ce.js"><link rel="prefetch" href="/assets/js/92.4b017ea2.js"><link rel="prefetch" href="/assets/js/93.fd833f99.js"><link rel="prefetch" href="/assets/js/94.d046bbe2.js"><link rel="prefetch" href="/assets/js/95.d5246413.js"><link rel="prefetch" href="/assets/js/96.1ff480c6.js"><link rel="prefetch" href="/assets/js/97.6ce2c492.js"><link rel="prefetch" href="/assets/js/98.f18a7560.js"><link rel="prefetch" href="/assets/js/99.601df3ad.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.831e1d62.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>suichenTree BLOG</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>suichenTree</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/user.jpg" alt="suichenTree BLOG" class="logo"> <span class="site-name">suichenTree BLOG</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="iconfont undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/系统/" class="nav-link"><i class="iconfont undefined"></i>
+  系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/随笔/" class="nav-link"><i class="iconfont undefined"></i>
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/数据结构/" class="nav-link"><i class="iconfont undefined"></i>
+  算法/数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英文/" class="nav-link"><i class="iconfont undefined"></i>
+  英文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/群晖NAS/" class="nav-link"><i class="iconfont undefined"></i>
+  群晖NAS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="iconfont undefined"></i>
+  vuepress-reco
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/简历/" class="nav-link"><i class="iconfont reco-account"></i>
+  简历
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/面试/" class="nav-link"><i class="iconfont reco-other"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/Java/" class="nav-link"><i class="iconfont reco-other"></i>
+  Java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/sui_chen_tree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:18271801652@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  邮件
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/user.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    suichenTree
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>140</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>49</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="iconfont undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/系统/" class="nav-link"><i class="iconfont undefined"></i>
+  系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="iconfont undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/随笔/" class="nav-link"><i class="iconfont undefined"></i>
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/数据结构/" class="nav-link"><i class="iconfont undefined"></i>
+  算法/数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英文/" class="nav-link"><i class="iconfont undefined"></i>
+  英文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/群晖NAS/" class="nav-link"><i class="iconfont undefined"></i>
+  群晖NAS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="iconfont undefined"></i>
+  vuepress-reco
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/简历/" class="nav-link"><i class="iconfont reco-account"></i>
+  简历
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/面试/" class="nav-link"><i class="iconfont reco-other"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/Java/" class="nav-link"><i class="iconfont reco-other"></i>
+  Java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/sui_chen_tree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:18271801652@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  邮件
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Redis基础</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>suichenTree</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2023
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">Redis基础</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>suichenTree</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2018-08-12</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Redis</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>[toc]</p> <h1 id="redis基础"><a href="#redis基础" class="header-anchor">#</a> Redis基础</h1> <h2 id="_1-nosql"><a href="#_1-nosql" class="header-anchor">#</a> 1. NOSQL</h2> <p><strong>nosql一般指非关系型数据库。nosql数据库就是为了解决大规模数据集合的存储问题。</strong></p> <p>NOSQL数据库相比传统的关系型数据库有许多优点：</p> <ol><li>易扩展，nosql数据库中数据与数据之间无关系，导致为数据库添加新的数据时，容易扩展。</li> <li>大数据量高性能：nosql数据库由于数据之间的无关系性，因此在大数据量的情况下有非常高的读写性能。</li> <li>灵活的数据模型：nosql无须为存储的数据建立字段。随时可以定义新的数据格式。</li></ol> <h2 id="_2-redis的介绍"><a href="#_2-redis的介绍" class="header-anchor">#</a> 2.Redis的介绍</h2> <p>Redis: Remote Dictionary Server (远程字典服务器)
+Redis是一个开源的、使用C语言编写的、支持网络交互的、可基于内存也可持久化的Key-Value数据库，是NOsql数据库之一。</p> <p>Redis的特点：</p> <ol><li>支持数据持久化，把内存的数据保存在磁盘中，重启的时候可以再次加载出来。</li> <li>不仅仅支持 key-value类型的数据，还支持list,set,zset,hash等数据结构的存储。</li> <li>redis支持数据备份，即主从模式的数据备份。</li></ol> <h2 id="_3-redis的安装"><a href="#_3-redis的安装" class="header-anchor">#</a> 3.Redis的安装</h2> <ol><li>从redis官网中下载的redis源码包 “redis-5.0.4.tar.gz”</li> <li>把源码包放到linux系统下的专门存放第三方应用程序的文件夹 /usr 或 /opt 下。</li> <li>解压源码包后会出现文件夹redis-5.0.4。</li> <li>进入到解压后的redis-5.0.4文件后，打开终端，<strong>在redis-5.0.4文件目录下运行 make 命令,开始编译redis-5.0.4文件，把它编译为二进制数据包。</strong></li> <li>接着执行 make install 命令，一般编译后的redis文件会放在 /usr/local 目录下。</li> <li>新建一个myredis文件，并把redis-5.0.4 文件中的redis.conf 拷贝到myredis文件中。</li> <li>用Vim文本编辑器修改myredis文件中redis.conf。命令：“ vim redis.conf ”。
+注意，该redis.conf可能为只读文件，需要用sudo命令来打开vim进行编辑
+&quot; sudo vim redis.conf &quot;</li> <li>把配置文件中的 daemonize no 改为 daemonize yes</li> <li>退出vim编辑器，并保存文件。命令“ ：wq ”</li></ol> <h4>Redis 的启动：</h4> <p>进入先前编译的redis-5.0.4/bin/ 目录下</p> <h5>前端启动：</h5> <p>直接输入命令：“ ./redis-server ”,启动效果如下。</p> <p><img src="/assets/img/redis_img_1.e7922fc5.png" alt="1"></p> <p>前端启动的缺点是启动完成之后，不能再进行其他操作，如果操作必须使用ctrl+c，同时redis-server程序结束，不推荐这种开启方式。</p> <h5>后端启动：</h5> <p>执行命令“ ./redis-server ../myredis/redis.conf”，即可启动redis服务端.
+然后输入命令&quot; ./redis-cli &quot; 即可进入客户端进行操作。
+再输入命令&quot; ping &quot;,如果redis 回应 &quot; pong &quot;,表示redis启动成功</p> <p><font color="red">../myredis/redis.conf 是存放备份的redis配置文件，尽量不要动原有的配置文件。</font></p> <p><img src="/assets/img/redis_img_2.a9ccaefd.png" alt="2"></p> <h4>退出redis</h4> <p>从客户端进入redis之后，输入exit退出</p> <h2 id="_4-redis-基础"><a href="#_4-redis-基础" class="header-anchor">#</a> 4.Redis 基础</h2> <h3 id="_1-redis基础知识"><a href="#_1-redis基础知识" class="header-anchor">#</a> 1.Redis基础知识</h3> <ol><li>redis的默认端口是6379</li> <li>默认有16个数据库（0-15），初试默认使用0号数据库</li> <li>16个数据库的密码相同。</li> <li>应用场景：缓存，取最新N个数据的操作，排行榜应用,取TOP N 操作等</li></ol> <h3 id="_2-redis基础命令"><a href="#_2-redis基础命令" class="header-anchor">#</a> 2.Redis基础命令</h3> <ol><li>set 命令：在当前数据库中设置一个键值对。之前有的会覆盖</li></ol> <blockquote><p>set k1 hello
+//设置一个 key=&quot;k1&quot;,value=&quot;hello&quot;的键值对</p></blockquote> <ol start="2"><li>get 命令：通过key值，获取当前数据库的对于的value值。</li></ol> <blockquote><p>get k1
+&quot;hello&quot;</p></blockquote> <ol start="3"><li>select 命令：切换数据库。一共有16个数据库（0-15）</li></ol> <blockquote><p>select 2
+//切换到2号数据库</p></blockquote> <ol start="4"><li>dbsize 命令：查看当前数据库的key的数量。</li></ol> <blockquote><p>dbsize
+1
+//表示当前这个数据库只有一个键值对</p></blockquote> <ol start="5"><li>flushdb 命令：删除当前数据库的所以key-value</li></ol> <blockquote><p>flushdb</p></blockquote> <ol start="6"><li>flushdb 命令：删除所以（16个）数据库的所以key-value</li></ol> <blockquote><p>flushall</p></blockquote> <ol start="7"><li>keys * 命令：查询当前数据库的所以键值对</li></ol> <blockquote><p>keys *
+&quot;ks&quot;
+&quot;k1&quot;
+&quot;k2&quot;
+&quot;qwe&quot;
+//表示当前数据库的键值对有&quot;ks&quot;。</p></blockquote> <ol start="8"><li>keys ？ 命令：通过占位符查询特定的key</li></ol> <blockquote><p>keys k?
+&quot;ks&quot;
+&quot;k1&quot;
+&quot;k2&quot;
+//查询当前数据库的以k为首字符的key</p></blockquote> <p><strong>其他基础命令</strong></p> <table><thead><tr><th>命令</th> <th>功能</th></tr></thead> <tbody><tr><td>DEL key</td> <td>此命令删除一个指定键(如果存在)。</td></tr> <tr><td>DUMP key</td> <td>此命令返回存储在指定键的值的序列化版本。</td></tr> <tr><td>EXISTS key</td> <td>此命令检查键是否存在。</td></tr> <tr><td>TTL key</td> <td>以秒为单位，返回给定 key 的剩余生存时间(TTL, time to live)。-1表示永不过期，-2表示已经过期。</td></tr> <tr><td>TYPE key</td> <td>返回存储在键中的值的数据类型</td></tr> <tr><td>KEYS pattern</td> <td>查找与指定模式匹配的所有键。</td></tr> <tr><td>MOVE key db</td> <td>将键移动到另一个数据库。</td></tr> <tr><td>PERSIST key</td> <td>删除指定键的过期时间，得永生。</td></tr> <tr><td>RANDOMKEY</td> <td>从Redis返回一个随机的键。</td></tr> <tr><td>RENAME key newkey</td> <td>更改键的名称。</td></tr> <tr><td>PTTL key</td> <td>以毫秒为单位返回 key 的剩余的过期时间。</td></tr> <tr><td>RENAMENX key newkey</td> <td>如果新键不存在，重命名键。</td></tr> <tr><td>EXPIRE key seconds</td> <td>设置键在指定时间秒数之后到期/过期。</td></tr> <tr><td>EXPIREAT key timestamp</td> <td>设置在指定时间戳之后键到期/过期。这里的时间是Unix时间戳格式。</td></tr> <tr><td>PEXPIRE key milliseconds</td> <td>设置键的到期时间(以毫秒为单位)。</td></tr> <tr><td>PEXPIREAT key milliseconds-timestamp</td> <td>以Unix时间戳形式来设置键的到期时间(以毫秒为单位)。</td></tr></tbody></table> <h2 id="_5-五大数据类型"><a href="#_5-五大数据类型" class="header-anchor">#</a> 5.五大数据类型</h2> <h3 id="_1-string-字符串-k-v"><a href="#_1-string-字符串-k-v" class="header-anchor">#</a> 1.string(字符串)---(K,V)</h3> <p>string类型是redis支持的最基本的数据类型。redis的string数据类型可以存储图片或序列化对象。并且redis的每个字符串的value最多可以存储512M.</p> <h4>redis字符串命令</h4> <table><thead><tr><th>命令</th> <th>功能</th></tr></thead> <tbody><tr><td>append key value</td> <td>如果 key 已经存在并且是一个字符串，该命令将指定的 value 追加到该 key 原来值（value）的末尾。</td></tr> <tr><td>strlen key</td> <td>返回 key 所储存的字符串值的长度。</td></tr> <tr><td>getset key value</td> <td>先get返回key的旧值,再覆盖 key 的值为 value。</td></tr> <tr><td>incr key</td> <td>将 key 中储存的数字值增一。(注意必须是数字才能进行加减)</td></tr> <tr><td>incrby key num</td> <td>将 key 所储存的值加上给定的num值。(注意必须是数字才能进行加减)</td></tr> <tr><td>decr key</td> <td>将 key 中储存的数字值减一。(注意必须是数字才能进行加减)</td></tr> <tr><td>decrby key num</td> <td>key 所储存的值减去给定的num值 。 (注意必须是数字才能进行加减)</td></tr> <tr><td>getrange key num1 num2</td> <td>获取指定区间范围（num1-num2）的值</td></tr> <tr><td>setrange key offset value</td> <td>从偏移量 offset 开始,重新设置key的值（会覆盖）。</td></tr> <tr><td>setex key seconds value</td> <td>设置键值对 ，并将 key 的过期时间设为 seconds (以秒为单位)。</td></tr> <tr><td>setnx key value</td> <td>当key不存在时，设置键值对。用于避免set命令导致的覆盖</td></tr> <tr><td>mget key1 [key2..]</td> <td>返回(一个或多个) key 的值。</td></tr> <tr><td>mset key value [key value ...]</td> <td>同时设置一个或多个 key-value。</td></tr> <tr><td>msetnx key value [key value ...]</td> <td>同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在。</td></tr></tbody></table> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; set k1 qwe
+127.0.0.1:6379&gt; append k1 rt
+127.0.0.1:6379&gt; get k1
+&quot;qwert&quot;
+
+127.0.0.1:6379&gt; strlen k1
+(integer) 5
+
+127.0.0.1:6379&gt; getset k1 abc
+&quot;qwert&quot;
+127.0.0.1:6379&gt; get k1
+&quot;abc&quot;
+
+127.0.0.1:6379&gt; getrange k1 0 1
+&quot;ab&quot;
+
+127.0.0.1:6379&gt; setrange k1 0 xx
+127.0.0.1:6379&gt; get k1
+&quot;xxc&quot;
+
+127.0.0.1:6379&gt; mset k2 v2 k3 v3
+OK
+127.0.0.1:6379&gt; mget k1 k2 k3
+1) &quot;xxc&quot;
+2) &quot;v2&quot;
+3) &quot;v3&quot;
+
+127.0.0.1:6379&gt; set k4 10
+OK
+127.0.0.1:6379&gt; incr k4
+(integer) 11
+127.0.0.1:6379&gt; incr k4
+(integer) 12
+127.0.0.1:6379&gt; decr k4
+(integer) 11
+
+127.0.0.1:6379&gt; incrby k4 5
+(integer) 16
+127.0.0.1:6379&gt; decrby k4 5
+(integer) 11
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h3 id="_2-list-列表-k-v"><a href="#_2-list-列表-k-v" class="header-anchor">#</a> 2.list 列表---(K,V)</h3> <p>Redis列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到<strong>列表的头部（左边）或者尾部（右边）。</strong></p> <p>redis中list的特点：</p> <ol><li>若键不存在，则新创建list</li> <li>若键存在，则修改list</li> <li>若列表中的内容全部移除，则对于的键就消失了。</li></ol> <h4>关于list的命令</h4> <table><thead><tr><th>命令</th> <th>功能</th></tr></thead> <tbody><tr><td>lpush key value1 [value2]</td> <td>将多个值插入到列表头部</td></tr> <tr><td>lpushx key value</td> <td>将一个值插入到已存在的列表头部</td></tr> <tr><td>rpush key value1 [value2]</td> <td>在列表中添加多个值</td></tr> <tr><td>rpushx key value</td> <td>为已存在的列表添加一个值</td></tr> <tr><td>lindex key index</td> <td>通过索引获取列表中的元素</td></tr> <tr><td>lrange key start stop</td> <td>获取列表范围内(start-stop)的元素，从0~-1表示全部</td></tr> <tr><td>linsert key before/after pivot value</td> <td>在列表的pivot元素前（后）插入value元素</td></tr> <tr><td>llen key</td> <td>获取列表长度</td></tr> <tr><td>lpop key</td> <td>移除并返回栈顶元素</td></tr> <tr><td>rpop key</td> <td>移除并返回栈底元素</td></tr> <tr><td>lrem key count value</td> <td>移除列表中的count个value值</td></tr> <tr><td>ltrim key start stop</td> <td>对列表进行修剪(trim)，让列表只保留指定区间内的元素，其余元素删除。</td></tr> <tr><td>rpoplpush source target</td> <td>移除source列表的栈底元素，并将该元素添加到target列表的栈顶</td></tr> <tr><td>lset key index value</td> <td>重新设置列表索引元素的值</td></tr> <tr><td>blpop key1 [key2] timeout</td> <td>移出并获取列表的第一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td></tr> <tr><td>brpop key1 [key2] timeout</td> <td>移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td></tr> <tr><td>brpoplpush source target timeout</td> <td>从source列表中弹出一个值，将弹出的元素插入到target列表中并返回它； 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。</td></tr></tbody></table> <font color="red"><p>lrange k1 0 -1
+//表示显示k1列表的全部元素，从0~-1表示全部</p> <p>lpush k1 1 2 3 4 5
+//表示从从左到右开始进栈。 进栈顺序：1-2-3-4-5.所以下面代码中是 1 为栈底</p> <p>rpush k2 1 2 3 4 5
+//表示从右到左开始进栈。进栈顺序：5-4-3-2-1。所以下面代码中是 5为栈底</p></font> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; lpush k1 1 2 3 4 5
+(integer) 5
+127.0.0.1:6379&gt; lrange k1 0 -1
+1) &quot;5&quot;
+2) &quot;4&quot;
+3) &quot;3&quot;
+4) &quot;2&quot;
+5) &quot;1&quot;
+127.0.0.1:6379&gt; lrange k1 0 1
+1) &quot;5&quot;
+2) &quot;4&quot;
+127.0.0.1:6379&gt; lindex k1 0
+&quot;5&quot;
+127.0.0.1:6379&gt; llen k1
+(integer) 5
+127.0.0.1:6379&gt; lpop k1
+&quot;5&quot;
+
+-------------------
+
+127.0.0.1:6379&gt; rpush k2 1 2 3 4 5
+(integer) 5
+127.0.0.1:6379&gt; lrange k2 0 -1
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+5) &quot;5&quot;
+127.0.0.1:6379&gt; lpop k2
+&quot;1&quot;
+127.0.0.1:6379&gt; rpop k2 
+&quot;5&quot;
+127.0.0.1:6379&gt; lrange k2 0 -1
+1) &quot;2&quot;
+2) &quot;3&quot;
+3) &quot;4&quot;
+127.0.0.1:6379&gt; lrem k2 1 2     //删除k2列表中的 1 个 2 元素
+(integer) 1
+127.0.0.1:6379&gt; lrange k2 0 -1
+1) &quot;3&quot;
+2) &quot;4&quot;
+
+--------------------------
+
+127.0.0.1:6379&gt; del k1   //删除之前的k1列表
+(integer) 1
+127.0.0.1:6379&gt; lpush k1 1 2 3 4 5 6 7 8   //重新设置k1列表
+(integer) 8
+127.0.0.1:6379&gt; ltrim k1 0 4      //截取k1列表中从栈顶开始计算的 0-4 个元素
+OK
+127.0.0.1:6379&gt; lrange k1 0 -1
+1) &quot;8&quot;
+2) &quot;7&quot;
+3) &quot;6&quot;
+4) &quot;5&quot;
+5) &quot;4&quot;
+
+127.0.0.1:6379&gt; rpoplpush k2 k1     //从k2列表中取出栈底元素，放到k1列表的栈顶上
+&quot;4&quot;
+127.0.0.1:6379&gt; lrange k1 0 -1
+1) &quot;4&quot;
+2) &quot;8&quot;
+3) &quot;7&quot;
+4) &quot;6&quot;
+5) &quot;5&quot;
+6) &quot;4&quot; 
+
+127.0.0.1:6379&gt; lset k1 0 9     //重新设置k1列表栈顶元素为9
+OK
+127.0.0.1:6379&gt; lrange k1 0 -1
+1) &quot;9&quot;
+2) &quot;8&quot;
+3) &quot;7&quot;
+4) &quot;6&quot;
+5) &quot;5&quot;
+6) &quot;4&quot;
+
+127.0.0.1:6379&gt; linsert k1 before 8 p    //在k1列表的8元素前插入p元素
+(integer) 7
+127.0.0.1:6379&gt; lrange k1 0 -1
+1) &quot;9&quot;
+2) &quot;p&quot;
+3) &quot;8&quot;
+4) &quot;7&quot;
+5) &quot;6&quot;
+6) &quot;5&quot;
+7) &quot;4&quot;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br></div></div><h3 id="_3-set-集合-k-v"><a href="#_3-set-集合-k-v" class="header-anchor">#</a> 3.set 集合---(K,V)</h3> <p>Redis 的 Set 是 String 类型的无序集合。集合成员是唯一的，即不能出现重复的数据。</p> <h4>关于set的命令</h4> <table><thead><tr><th>命令</th> <th>功能</th></tr></thead> <tbody><tr><td>sadd key member1 [member2]</td> <td>向集合添加多个成员</td></tr> <tr><td>smembers key</td> <td>返回集合中的所有成员</td></tr> <tr><td>sismember key member</td> <td>判断集合key中是否有 member 元素</td></tr> <tr><td>srandmember key [count]</td> <td>随机返回集合中多个随机数</td></tr> <tr><td>scard key</td> <td>获取集合中的元素个数</td></tr> <tr><td>srem key member1 [member2]</td> <td>移除集合中多个成员</td></tr> <tr><td>spop key</td> <td>随机取出集合中的一个元素</td></tr> <tr><td>smove s1 s2 member</td> <td>把s1集合中的member元素移到s2集合中</td></tr> <tr><td>sdiff key1 [key2]</td> <td>返回在key1集合不在key2集合中的元素（差集）</td></tr> <tr><td>sdiffstore target key1 [key2]</td> <td>把key1,key2集合的差集存储在target集合中</td></tr> <tr><td>sinter key1 [key2]</td> <td>返回key1集合与key2集合的交集元素</td></tr> <tr><td>sinterstore target key1 [key2]</td> <td>把交集并存储在target集合中</td></tr> <tr><td>sunion key1 [key2]</td> <td>返回所有给定集合的并集</td></tr> <tr><td>sunionstore target key1 [key2]</td> <td>把并集存储在target集合中</td></tr></tbody></table> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; sadd set1 1 2 3 4 5    //添加元素到set1集合中
+(integer) 5    
+127.0.0.1:6379&gt; smembers set1      //返回set1集合中的所有元素
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+5) &quot;5&quot;
+127.0.0.1:6379&gt; sadd set1 1 2 6    //再往集合set1中添加元素 1 2 6
+(integer) 1                        //结果显示添加成功1次
+127.0.0.1:6379&gt; smembers set1      //只有6添加进去，1 2 元素重复
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+5) &quot;5&quot;
+6) &quot;6&quot;
+127.0.0.1:6379&gt; sismember set1 2     //判断 set1集合中是否有2元素
+(integer) 1
+127.0.0.1:6379&gt; sismember set1 7     //判断 set1集合中是否有7元素
+(integer) 0
+
+127.0.0.1:6379&gt; srandmember set1    //返回集合中的一个随机数
+&quot;5&quot;
+127.0.0.1:6379&gt; srandmember set1 2
+1) &quot;6&quot;
+2) &quot;2&quot;
+
+-----------------------
+
+127.0.0.1:6379&gt; sadd set2 5 6 7 8 9
+(integer) 5
+127.0.0.1:6379&gt; smembers set2
+1) &quot;5&quot;
+2) &quot;6&quot;
+3) &quot;7&quot;
+4) &quot;8&quot;
+5) &quot;9&quot;
+127.0.0.1:6379&gt; smembers set1
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+5) &quot;5&quot;
+6) &quot;6&quot;
+127.0.0.1:6379&gt; sdiff set1 set2  //返回在set1集合中，不再set2集合中的元素
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+
+127.0.0.1:6379&gt; sdiffstore set3 set1 set2   //把set1 与set2的插集的元素，存储在set3中
+(integer) 4
+127.0.0.1:6379&gt; smembers set3
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+
+127.0.0.1:6379&gt; sinter set1 set2    //返回set1集合与set2集合中的交集元素
+1) &quot;5&quot;
+2) &quot;6&quot;
+127.0.0.1:6379&gt; sunion set1 set2   //返回set1集合与set2集合中的并集元素
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+4) &quot;4&quot;
+5) &quot;5&quot;
+6) &quot;6&quot;
+7) &quot;7&quot;
+8) &quot;8&quot;
+9) &quot;9&quot;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br></div></div><h3 id="_4-哈希-hash-k-k-v"><a href="#_4-哈希-hash-k-k-v" class="header-anchor">#</a> 4.哈希(Hash)---(K,(K,V))</h3> <p>Redis hash 是一个string类型的field和value的映射表，hash特别适合用于存储对象。</p> <font color="red">
+在redis的hash中，key 是键，value 是另一个键值对。即value是一个map
+</font> <h4>关于Hash的命令</h4> <table><thead><tr><th>命令</th> <th>功能</th></tr></thead> <tbody><tr><td>hset key field value</td> <td>将哈希表 key 中的字段 field 的值设为 value 。</td></tr> <tr><td>hget key field</td> <td>获取哈希表key中field字段的值。</td></tr> <tr><td>hmset key field1 value1 [field2 value2 ]</td> <td>同时设置多个field-value到哈希表 key 中。</td></tr> <tr><td>hmget key field1 [field2]</td> <td>获取所有给定字段的值</td></tr> <tr><td>hgetall key</td> <td>获取在哈希表中的所有字段和值</td></tr> <tr><td>hdel key field1 [field2]</td> <td>删除多个哈希表字段</td></tr> <tr><td>hkeys key</td> <td>获取哈希表中的字所有字段</td></tr> <tr><td>hvals key</td> <td>获取哈希表中所有值</td></tr> <tr><td>hlen key</td> <td>获取哈希表中字段的数量</td></tr> <tr><td>hexists key field</td> <td>查看哈希表key中指定的字段是否存在。</td></tr> <tr><td>hincrby key field num</td> <td>为表key中的指定字段的整数值加上增量num。</td></tr> <tr><td>hincrbyfloat key field num</td> <td>为表key中的指定字段的浮点数值加上增量num 。</td></tr> <tr><td>hsetnx key field value</td> <td>只有在字段 field 不存在时，设置哈希表字段的值。</td></tr></tbody></table> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; hset user id 1    //设置一个user的hash表，表中有id字段，且id字段的值为1
+(integer) 1
+127.0.0.1:6379&gt; hget user id     //返回user这个hash表中id的字段的值
+&quot;1&quot;
+127.0.0.1:6379&gt; hgetall user    //返回user这个hash表的所有内容
+1) &quot;id&quot;
+2) &quot;1&quot;
+
+127.0.0.1:6379&gt; hmset user id 1 name shu age 12    //设置hash表user的字段有id,name,age
+OK
+127.0.0.1:6379&gt; hmget user id name age
+1) &quot;1&quot;
+2) &quot;shu&quot;
+3) &quot;12&quot;
+127.0.0.1:6379&gt; hgetall user         //获取所有hash表user的内容
+1) &quot;id&quot;
+2) &quot;1&quot;
+3) &quot;name&quot;
+4) &quot;shu&quot;
+5) &quot;age&quot;
+6) &quot;12&quot;
+127.0.0.1:6379&gt; hdel user age    //删除hash表user中age字段
+(integer) 1
+127.0.0.1:6379&gt; hgetall user
+1) &quot;id&quot;
+2) &quot;1&quot;
+3) &quot;name&quot;
+4) &quot;shu&quot;
+
+127.0.0.1:6379&gt; hkeys user   //获取表中所有字段
+1) &quot;id&quot; 
+2) &quot;name&quot;
+127.0.0.1:6379&gt; hvals user   //获取表中所有值
+1) &quot;1&quot;
+2) &quot;shu&quot;
+
+127.0.0.1:6379&gt; hexists user age     //判断表中是否有指定的字段
+(integer) 0                          //0表示没有，1表示有
+127.0.0.1:6379&gt; hexists user name
+(integer) 1
+
+127.0.0.1:6379&gt; hset user age 10      //在表中设置age字段，值为10
+(integer) 1
+127.0.0.1:6379&gt; hincrby user age 5      //给age字段的值加上5
+(integer) 15
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><h3 id="_5-zset-有序集合-sorted-set"><a href="#_5-zset-有序集合-sorted-set" class="header-anchor">#</a> 5.Zset,有序集合(sorted set)</h3> <p>Redis 有序集合和集合一样也是string类型元素的集合,且不允许重复的成员。
+有序集合中每个元素都会关联一个double类型的分数（score）。redis正是通过分数来为集合中的成员进行从小到大的排序。
+有序集合的成员是唯一的,但分数(score)却可以重复。</p> <font color="red"><p>有序集合在集合set的基础上，给每个元素都关联了一个score值。
+之前的set是(K,(v1,v2,v3,...))
+现在的有序集合是(K,((score1,v1),(score2,v2),(score3,v3)....) ,其中(score1,v1)是键值对</p></font> <h4>关于有序集合的命令</h4> <table><thead><tr><th>命令</th> <th>功能</th></tr></thead> <tbody><tr><td>zadd key score1 member1 [score2 member2]</td> <td>向有序集合添加多个成员，或者更新已存在成员的分数</td></tr> <tr><td>zcard key</td> <td>获取有序集合的成员数</td></tr> <tr><td>zcount key min max</td> <td>计算在有序集合中指定区间分数的成员数</td></tr> <tr><td>zscore key member</td> <td>返回有序集合中member成员的分数值</td></tr> <tr><td>zrank key member</td> <td>返回指定成员的下标值（索引），从0开始</td></tr> <tr><td>zrevrank key member</td> <td>逆序获得下标值。</td></tr> <tr><td>zrange key start stop [withscores]</td> <td>返回有序集合中指定区间内的成员</td></tr> <tr><td>zrangebyscore key min max [withscores] [limit]</td> <td>通过分数返回有序集合指定区间内的成员</td></tr> <tr><td>zrevrange key start stop</td> <td>逆序返回指定区间内的成员</td></tr> <tr><td>zrevrangebyscore key max min</td> <td>逆序返回指定分数区间内的成员（通过分数从高到低排序）</td></tr> <tr><td>zrem key member [member ...]</td> <td>移除有序集合的多个成员</td></tr> <tr><td>zremrangebyrank key start stop</td> <td>移除有序集合中给定索引的所有成员</td></tr> <tr><td>zremrangebyscore key min max</td> <td>移除有序集合中给定分数区间的所有成员</td></tr> <tr><td>zincrby key num member</td> <td>有序集合中对指定成员的分数加上增量 num</td></tr> <tr><td>zinterscore target numkeys key [key ...]</td> <td>计算给定的多个有序集的交集并存储在新的有序集合target中</td></tr> <tr><td>zunionstore target numkeys key [key ...]</td> <td>计算给定的多个有序集的并集，并存储在新的target中</td></tr></tbody></table> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+127.0.0.1:6379&gt; zadd zset1 10 user1 20 user2 40 user4   //设置有序集合zset1,其中10分的是user1,....
+(integer) 3
+127.0.0.1:6379&gt; zrange zset1 0 -1    //返回指定范围的有序集合的内容
+1) &quot;user1&quot;
+2) &quot;user2&quot;
+3) &quot;user4&quot;
+127.0.0.1:6379&gt; zrange zset1 0 -1 withscores    //返回指定范围的有序集合的内容，带分数
+1) &quot;user1&quot;
+2) &quot;10&quot;
+3) &quot;user2&quot;
+4) &quot;20&quot;
+5) &quot;user4&quot;
+6) &quot;40&quot;
+
+127.0.0.1:6379&gt; zrangebyscore zset1 10 40     //找出10分到40分的元素成员
+1) &quot;user1&quot;
+2) &quot;user2&quot;
+3) &quot;user4&quot;
+127.0.0.1:6379&gt; zrangebyscore zset1 10 40 limit 0 2      //找出10分到40分的，从第0个开始选2个元素出来
+1) &quot;user1&quot;
+2) &quot;user2&quot;
+
+127.0.0.1:6379&gt; zcard zset1     //返回有序集合的成员数
+(integer) 3
+127.0.0.1:6379&gt; zcount zset1 10 40   //返回有序集合中的10-40分的成员数
+(integer) 3
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="_6-redis配置文件-redis-conf"><a href="#_6-redis配置文件-redis-conf" class="header-anchor">#</a> 6.Redis配置文件(redis.conf)</h2> <h4>通用配置文件：</h4> <table><thead><tr><th>配置项</th> <th>说明</th></tr></thead> <tbody><tr><td>daemonize no</td> <td>Redis 默认为no，使用 yes 启用守护进程运行（Windows 不支持守护线程的配置为 no ）</td></tr> <tr><td>pidfile /var/run/redis.pid</td> <td>当 Redis 以守护进程方式运行时，Redis 默认会把 pid 写入 /var/run/redis.pid 文件，可以通过 pidfile 指定</td></tr> <tr><td>port 6379</td> <td>Redis默认端口为 6379.</td></tr> <tr><td>databases 16</td> <td>设置数据库的数量.</td></tr> <tr><td>bind 127.0.0.1</td> <td>绑定的主机地址</td></tr> <tr><td>timeout 300</td> <td>当客户端闲置多长时间后关闭连接，如果指定为 0，表示关闭该功能</td></tr> <tr><td>loglevel notice</td> <td>指定日志记录级别，Redis 总共支持四个级别：debug、verbose、notice、warning，默认为 notice</td></tr> <tr><td>logfile stdout</td> <td>日志记录方式，默认为标准输出，如果配置 Redis 为守护进程方式运行，而这里又配置为日志记录方式为标准输出，则日志将会发送给 /dev/null</td></tr> <tr><td>save seconds changes</td> <td>Redis 默认配置文件中提供了三个条件save 900 1,save 300 10,save 60 10000指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合.</td></tr> <tr><td>rdbcompression yes</td> <td>指定存储至本地数据库时是否压缩数据，默认为yes，关闭该选项可能会导致数据库文件变的巨大</td></tr> <tr><td>dbfilename dump.rdb</td> <td>指定本地数据库文件名，默认值为 dump.rdb</td></tr> <tr><td>dir ./</td> <td>指定本地数据库存放目录</td></tr> <tr><td>slaveof masterip masterport</td> <td>设置当本机为slav服务时，设置 master 服务的 IP 地址及端口，在 Redis 启动时，它会自动从 master 进行数据同步</td></tr> <tr><td>masterauth master-password</td> <td>当 master 服务设置了密码保护时，slav 服务连接 master 的密码</td></tr> <tr><td>requirepass foobared</td> <td>设置连接密码，如果配置了连接密码，客户端在连接 Redis 时需要通过 AUTH password 命令提供密码，默认关闭</td></tr> <tr><td>maxclients 128</td> <td>设置同一时间最大客户端连接数，默认无限制，如果设置 maxclients 0，表示不作限制。当客户端连接数到达限制时，Redis 会关闭新的连接并向客户端返回 max number of clients reached 错误信息</td></tr> <tr><td>maxmemory bytes</td> <td>指定最大内存限制，Redis 会把数据加载到内存中，达到最大内存后，Redis 会先尝试清除已到期或即将到期的 Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。</td></tr> <tr><td>appendonly no</td> <td>指定是否在每次更新操作后进行日志记录。默认为 no。</td></tr> <tr><td>appendfilename appendonly.aof</td> <td>指定更新日志文件名，默认为 appendonly.aof。</td></tr></tbody></table> <h2 id="_7-redis的持久化"><a href="#_7-redis的持久化" class="header-anchor">#</a> 7.Redis的持久化</h2> <p>redis的持久化就是把Reid存储在内存的数据放到硬盘上。</p> <p>Redis提供了两种将数据定期自动持久化至硬盘的方法，包括RDB和AOF两种方法。</p> <h3 id="_1-rdb持久化"><a href="#_1-rdb持久化" class="header-anchor">#</a> 1.RDB持久化</h3> <p>RDB持久化是指在指定的时间间隔内将内存中的数据集快照写入磁盘。其也是默认的持久化方式，这种方式是就是将内存中数据以快照的方式写入到二进制文件中,文件名为dump.rdb。</p> <blockquote><p>配置redis进行间隔时间内持久化的方式：（<font color="red">在redis.conf配置文件中</font>）</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>save 900 1     #表示900秒内如果超过1个key被修改，则发起数据快照保存
+save 300 10    #表示300秒内容如超过10个key被修改，则发起数据快照保存
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4>RDB持久化的优点与缺点</h4> <blockquote><p>优点：</p></blockquote> <ol><li>一旦采用该方式，你的整个Redis数据库将只包含一个文件，方便进行备份。</li> <li>使用RDB文件进行数据恢复比使用AOF要快很多。</li> <li>RDB 可以最大化 Redis 的性能：父进程在保存 rdb 文件时唯一要做的就是 fork 出一个子进程，然后这个子进程就会处理接下来的所有保存工作，父进程无须执行任何磁盘 I/O 操作。</li></ol> <blockquote><p>缺点：</p></blockquote> <ol><li>快照是定期生成的，并且一次快照时间较长。所以在Redis 崩溃时或多或少会丢失一部分数据。</li> <li>如果数据集非常大，Redis在fork子进程，并进行快照时可能会消耗相对较长的时间，影响Redis对外提供服务的能力。</li></ol> <h3 id="_2-aof持久化"><a href="#_2-aof持久化" class="header-anchor">#</a> 2.AOF持久化</h3> <p>采用AOF持久方式时，Redis会把每一个写的请求都记录在一个aof日志文件(默认是 appendonly.aof)里。在Redis重启时，会把aof文件中记录的所有写操作顺序执行一遍，确保数据恢复到最新。AOF默认是关闭的.</p> <blockquote><p>配置redis打开AOF持久化方式（在redis.conf 配置文件中）： appendonly yes</p></blockquote> <p>在AOF持久化方式中，可以通过配置文件中的fsync函数强制os写入到磁盘的时机。fsync函数有三种方式如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>appendonly yes           //启用aof持久化方式
+
+appendfsync everysec     //交由后台线程每秒fsync一次，在性能和持久化方面做了很好的折中，默认推荐
+
+# appendfsync always     //每写入一条日志就进行一次fsync操作，数据安全性最高，但速度最慢
+
+# appendfsync no        //将flush文件的时机交给OS决定，性能最好,持久化没保证
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>随着AOF不断地记录写操作日志，因为所有的操作都会记录，所以必定会出现一些无用的日志。
+Redis提供了AOF rewrite功能，可以重写AOF文件，只保留能够把数据恢复到最新状态的最小写操作集。</p> <blockquote><p>auto-aof-rewrite-percentage 100auto-aof-rewrite-min-size 64mb</p></blockquote> <p>上面含义是，Redis在每次AOF rewrite时，会记录完成rewrite后的AOF日志大小，当AOF日志大小在该基础上增长了100%后，自动进行AOF rewrite。同时如果增长的大小没有达到64mb，则不会进行rewrite。</p> <h4>AOF持久化的优点与缺点</h4> <blockquote><p>优点：</p></blockquote> <ol><li>AOF文件在发生断电等问题时也不会损坏，即使出现了某条日志只写入了一半的情况，也可以使用redis-check-aof工具轻松修复。</li> <li>AOF文件易读，可修改，在进行了某些错误的数据清除操作后，只要AOF文件没有rewrite，就可以把AOF文件备份出来，把错误的命令删除，然后恢复数据。</li></ol> <blockquote><p>缺点：</p></blockquote> <ol><li>AOF文件通常比RDB文件更大</li> <li>性能消耗比RDB高</li> <li>数据恢复速度比RDB慢</li></ol> <hr> <h2 id="_8-redis事务"><a href="#_8-redis事务" class="header-anchor">#</a> 8.Redis事务</h2> <blockquote><p>redis事务从开始到执行会经历三个阶段：事务开始（以MULTI为标志）-&gt; 命令入队-&gt; 事务执行（通过EXEC执行）</p></blockquote> <h4>事务命令</h4> <table><thead><tr><th>命令</th> <th>描述</th></tr></thead> <tbody><tr><td>multi</td> <td>标记一个事务块的开始。</td></tr> <tr><td>exec</td> <td>执行所有事务块内的命令。</td></tr> <tr><td>discard</td> <td>取消事务，放弃执行事务块内的所有命令。</td></tr> <tr><td>unwatch</td> <td>取消 watch 命令对所有 key 的监视。</td></tr> <tr><td>watch key [key ...]</td> <td>监视多个key ，如果在事务执行之前这些key有所改动，则事务将被打断。</td></tr></tbody></table> <font color="red">
+注意：当在事务中，编写命令过程中出错，则整个事务就已经无法执行了。
+</font> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; multi    //标志事务的开始
+OK
+127.0.0.1:6379&gt; set k1 xiaoming
+QUEUED
+127.0.0.1:6379&gt; set k2 xiaohei
+QUEUED
+127.0.0.1:6379&gt; set k3 xiaohong
+QUEUED
+127.0.0.1:6379&gt; mget k1 k2 k3
+QUEUED
+127.0.0.1:6379&gt; exec    //执行事务，下面是执行结果
+1) OK
+2) OK
+3) OK
+4) 1) &quot;xiaoming&quot;
+   2) &quot;xiaohei&quot;
+   3) &quot;xiaohong&quot;
+
+---------------------------
+
+127.0.0.1:6379&gt; multi
+OK
+127.0.0.1:6379&gt; set k3 v3
+QUEUED
+127.0.0.1:6379&gt; set k4 v4
+QUEUED
+127.0.0.1:6379&gt; getset k5    
+(error) ERR wrong number of arguments for 'getset' command     //由于这个命令在编写过程中出现错误，因此整个事务都无法执行了
+127.0.0.1:6379&gt; set k5 v5
+QUEUED
+127.0.0.1:6379&gt; exec
+(error) EXECABORT Transaction discarded because of previous errors.   //exec事务执行命令失败
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h2 id="_9-发布订阅"><a href="#_9-发布订阅" class="header-anchor">#</a> 9.发布订阅</h2> <p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道。</p> <h4>发布订阅命令</h4> <table><thead><tr><th>命令</th> <th>描述</th></tr></thead> <tbody><tr><td>pubsub subcommand [argument [argument ...]]</td> <td>查看订阅与发布系统状态。</td></tr> <tr><td>subscribe channel [channel ...]</td> <td>订阅多个频道。</td></tr> <tr><td>publish channel message</td> <td>将信息发送到指定的频道。</td></tr> <tr><td>unsubscribe [channel [channel ...]]</td> <td>退订给定的频道。</td></tr> <tr><td>psubscribe pattern [pattern ...]</td> <td>订阅多个符合给定模式的频道</td></tr> <tr><td>punsubscribe [pattern [pattern ...]]</td> <td>退订所有给定模式的频道。</td></tr></tbody></table> <blockquote><p>1.我们先订阅一个c1 频道</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; subscribe c1
+Reading messages... (press Ctrl-C to quit)
+1) &quot;subscribe&quot;
+2) &quot;c1&quot;
+3) (integer) 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>2.再重新开启个redis客户端，然后在c1频道发布消息，订阅者就能接收到消息。</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; publish c1 &quot;hello c1&quot;
+(integer) 1
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p><font color="red">3.再回到之前的订阅c1频道的redis客户端,会发现多出了几行信息。</font></p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6379&gt; subscribe c1
+Reading messages... (press Ctrl-C to quit)
+1) &quot;subscribe&quot;
+2) &quot;c1&quot;
+3) (integer) 1
+1) &quot;message&quot;      //从这里开始就是另一个客户端向c1频道发布的信息
+2) &quot;c1&quot;
+3) &quot;hello c1&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><img src="/assets/img/redis_img_3.f2a8ed58.png" alt="3"></p> <hr> <h2 id="_10-redis主从复制"><a href="#_10-redis主从复制" class="header-anchor">#</a> 10.Redis主从复制</h2> <p>主从复制：即主机数据进行更新后，根据配置和策略。自动将主机的数据同步到从机上的master/slaver机制。其中主机以写入数据为主，从机以读取数据为主。</p> <p>主从复制的几种方式：</p> <p><img src="/assets/img/redis_img_4.a71cf903.png" alt="4"></p> <p><img src="/assets/img/redis_img_5.2a49932d.png" alt="5"></p> <p><img src="/assets/img/redis_img_6.3ca7ef34.png" alt="6"></p> <font color="blue">
+以一主两从的方式为举例：
+<ol><li>当主机死了，这是两个从机还是slave的身份。若主机又活力，从机还是slave身份。</li> <li>当从机死了，当重启从机时，从机会变成 master身份。需要重新与主机建立主从联系。
+除非之前已经把主机信息，写进了从机的配置文件中。</li></ol></font> <h3>主从reids的配置：</h3> <blockquote><ol><li>主机redis 配置</li></ol></blockquote> <p>无需特殊配置。默认为6379端口。</p> <blockquote><ol start="2"><li>从机redis配置</li></ol></blockquote> <ol><li>复制两个redis.conf文件，并命名为redis6380.conf和redis6381.conf。这是两个从机的配置文件。</li> <li>设置daemonize，和pid文件。</li> <li>更改从配置文件的指定端口，分别为6380，6381</li> <li>更改log文件。</li> <li>更改从机的备份文件</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>#这是6380从机的配置文件更改
+daemonize yes
+pidfile /var/run/redis6380.pid
+port 6380
+logfile 6380.log
+dbfilename dump6380.rdb
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><blockquote><ol start="3"><li>建立从机与主机的关联</li></ol></blockquote> <p>方式①：</p> <p>在从机的配置文件（redis6380.conf和redis6381.conf）中配置这一行。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>slaveof 主机IP 主机端口
+
+#例如：slaveof 127.0.0.1 6379。
+#说明当前该从 redis 服务器所对应的主 redis 是127.0.0.1，端口是6379。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>方式②：打开从机的redis 命令行，输入 slaveof host port 命令，然后同步就会开始：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6380&gt; slaveof 127.0.0.1 6379
+ok
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>主从复制建立后，从节点默认使用”slave-read-only=yes”配置为只读模式，如果修改从节点的只读配置，会导致主从数据不一致。==</p> <blockquote><ol start="4"><li>查看redis的的主从复制信息。输入命令<code>info replication</code></li></ol></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>#主机查看信息
+127.0.0.1:6379&gt; info replication
+# Replication
+role:master
+...
+
+#从机6380查看信息
+127.0.0.1:6380&gt; info replication
+# Replication
+role:slave
+...
+
+#从机6381查看信息
+127.0.0.1:6381&gt; info replication
+# Replication
+role:slave
+...
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><blockquote><ol start="5"><li>主从联系断开</li></ol></blockquote> <p>在从机命令窗口中输入命令：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6380&gt; slaveof no one
+#就可以端口这个6380从机与主机的关联
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><font color="red"><ol><li>若主节点故障，从节点执行 slaveof no one 后将会变成新主节点；</li> <li>这时其它的节点成为新主节点的从节点，并从新节点复制数据；</li></ol></font> <blockquote><ol start="6"><li>主从复制中切主操作</li></ol></blockquote> <p>在从机命令窗口中输入命令：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>127.0.0.1:6380&gt; slave newMasterIP newMmasterPort
+# slave 127.0.0.1 6381
+# 切换6381为新主redis
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>主从复制切主命令同建立主从复制的命令一样，切主后从节点会清空之前所有的数据。在生产生谨慎使用。</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">10/21/2022, 5:44:10 PM</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-602aa6ce data-v-602aa6ce><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-602aa6ce><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-602aa6ce></path> <path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-602aa6ce></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      随便看看把
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.54bffa5d.js" defer></script><script src="/assets/js/15.522c722b.js" defer></script><script src="/assets/js/1.e9c88d96.js" defer></script><script src="/assets/js/49.da3e997c.js" defer></script>
+  </body>
+</html>
