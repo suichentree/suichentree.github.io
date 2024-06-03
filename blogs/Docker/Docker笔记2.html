@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker笔记2 | suichentree&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?58657c617e14a7184e841a80d36a78ce";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <meta name="description" content="(;-_-)ᴇᴍᴍᴍ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.de06d2f0.css" as="style"><link rel="preload" href="/assets/js/app.b5afc25e.js" as="script"><link rel="preload" href="/assets/js/7.b1dabc64.js" as="script"><link rel="preload" href="/assets/js/2.6db6176c.js" as="script"><link rel="preload" href="/assets/js/1.578a3538.js" as="script"><link rel="preload" href="/assets/js/81.286dd1ed.js" as="script"><link rel="prefetch" href="/assets/js/10.8c567e2f.js"><link rel="prefetch" href="/assets/js/100.95fa8a5e.js"><link rel="prefetch" href="/assets/js/101.7587e406.js"><link rel="prefetch" href="/assets/js/102.1b761003.js"><link rel="prefetch" href="/assets/js/103.a34e81e8.js"><link rel="prefetch" href="/assets/js/104.4d2e675e.js"><link rel="prefetch" href="/assets/js/105.ffca7a84.js"><link rel="prefetch" href="/assets/js/106.63ee596a.js"><link rel="prefetch" href="/assets/js/107.f935f951.js"><link rel="prefetch" href="/assets/js/108.4ee9f508.js"><link rel="prefetch" href="/assets/js/109.56f77abd.js"><link rel="prefetch" href="/assets/js/11.db2e9350.js"><link rel="prefetch" href="/assets/js/110.7619ff04.js"><link rel="prefetch" href="/assets/js/111.b7ea5e6a.js"><link rel="prefetch" href="/assets/js/112.42dde59d.js"><link rel="prefetch" href="/assets/js/113.b3ef8f0a.js"><link rel="prefetch" href="/assets/js/114.ac81ad30.js"><link rel="prefetch" href="/assets/js/115.0e6a62ec.js"><link rel="prefetch" href="/assets/js/116.0129bde7.js"><link rel="prefetch" href="/assets/js/117.887371a3.js"><link rel="prefetch" href="/assets/js/118.9dcea91c.js"><link rel="prefetch" href="/assets/js/119.40584454.js"><link rel="prefetch" href="/assets/js/120.d8dc2a9b.js"><link rel="prefetch" href="/assets/js/121.9836a15b.js"><link rel="prefetch" href="/assets/js/122.a7d66115.js"><link rel="prefetch" href="/assets/js/123.ed83f282.js"><link rel="prefetch" href="/assets/js/124.60f74391.js"><link rel="prefetch" href="/assets/js/125.61304d23.js"><link rel="prefetch" href="/assets/js/126.2e149761.js"><link rel="prefetch" href="/assets/js/127.1f0762ec.js"><link rel="prefetch" href="/assets/js/128.fec3c871.js"><link rel="prefetch" href="/assets/js/129.8f9b8f50.js"><link rel="prefetch" href="/assets/js/130.cb89c53c.js"><link rel="prefetch" href="/assets/js/131.4162b9be.js"><link rel="prefetch" href="/assets/js/132.ac766bcd.js"><link rel="prefetch" href="/assets/js/133.36156876.js"><link rel="prefetch" href="/assets/js/134.773a0804.js"><link rel="prefetch" href="/assets/js/135.a078da63.js"><link rel="prefetch" href="/assets/js/136.588fc6c3.js"><link rel="prefetch" href="/assets/js/137.c9ba0f67.js"><link rel="prefetch" href="/assets/js/138.9af50842.js"><link rel="prefetch" href="/assets/js/139.e16288f6.js"><link rel="prefetch" href="/assets/js/14.eb719f44.js"><link rel="prefetch" href="/assets/js/140.b84a56e3.js"><link rel="prefetch" href="/assets/js/141.108a9135.js"><link rel="prefetch" href="/assets/js/142.c2f3c9f3.js"><link rel="prefetch" href="/assets/js/143.6fca2d10.js"><link rel="prefetch" href="/assets/js/144.0ff675d2.js"><link rel="prefetch" href="/assets/js/145.2f1b9787.js"><link rel="prefetch" href="/assets/js/146.ae9c4215.js"><link rel="prefetch" href="/assets/js/147.067d3c58.js"><link rel="prefetch" href="/assets/js/148.fd245a99.js"><link rel="prefetch" href="/assets/js/149.a7805ab4.js"><link rel="prefetch" href="/assets/js/15.ffd40c3b.js"><link rel="prefetch" href="/assets/js/150.c2e2f096.js"><link rel="prefetch" href="/assets/js/151.3151a865.js"><link rel="prefetch" href="/assets/js/152.cd52a416.js"><link rel="prefetch" href="/assets/js/153.5b98f0e0.js"><link rel="prefetch" href="/assets/js/154.34e9efa0.js"><link rel="prefetch" href="/assets/js/155.22a16f30.js"><link rel="prefetch" href="/assets/js/156.879bde4a.js"><link rel="prefetch" href="/assets/js/157.e9038066.js"><link rel="prefetch" href="/assets/js/158.d5ea816b.js"><link rel="prefetch" href="/assets/js/159.95ccd548.js"><link rel="prefetch" href="/assets/js/16.63d759e0.js"><link rel="prefetch" href="/assets/js/160.f1a3fea0.js"><link rel="prefetch" href="/assets/js/161.fee962c1.js"><link rel="prefetch" href="/assets/js/162.d49645c8.js"><link rel="prefetch" href="/assets/js/163.6529d762.js"><link rel="prefetch" href="/assets/js/164.bea03b08.js"><link rel="prefetch" href="/assets/js/165.7009d2a6.js"><link rel="prefetch" href="/assets/js/166.7da79117.js"><link rel="prefetch" href="/assets/js/167.e24c1f17.js"><link rel="prefetch" href="/assets/js/168.18956b8e.js"><link rel="prefetch" href="/assets/js/169.7a7c72cb.js"><link rel="prefetch" href="/assets/js/17.a8eecdb1.js"><link rel="prefetch" href="/assets/js/170.639c1c23.js"><link rel="prefetch" href="/assets/js/171.20c15f79.js"><link rel="prefetch" href="/assets/js/172.e435f437.js"><link rel="prefetch" href="/assets/js/173.a7d1fe21.js"><link rel="prefetch" href="/assets/js/174.6f54d0e5.js"><link rel="prefetch" href="/assets/js/175.06673ce4.js"><link rel="prefetch" href="/assets/js/176.ebfe3f5e.js"><link rel="prefetch" href="/assets/js/177.00193aa5.js"><link rel="prefetch" href="/assets/js/178.2caa6930.js"><link rel="prefetch" href="/assets/js/179.ec258c54.js"><link rel="prefetch" href="/assets/js/18.03470408.js"><link rel="prefetch" href="/assets/js/180.88cc7664.js"><link rel="prefetch" href="/assets/js/181.e4e42f36.js"><link rel="prefetch" href="/assets/js/182.64611a89.js"><link rel="prefetch" href="/assets/js/183.b7724b9c.js"><link rel="prefetch" href="/assets/js/184.b60cb600.js"><link rel="prefetch" href="/assets/js/185.2f0df08f.js"><link rel="prefetch" href="/assets/js/186.cee322ba.js"><link rel="prefetch" href="/assets/js/187.5c11b41a.js"><link rel="prefetch" href="/assets/js/188.dcb51e26.js"><link rel="prefetch" href="/assets/js/189.c0140600.js"><link rel="prefetch" href="/assets/js/19.b0af8953.js"><link rel="prefetch" href="/assets/js/190.a5e64c47.js"><link rel="prefetch" href="/assets/js/191.acb2cfdb.js"><link rel="prefetch" href="/assets/js/192.d3386e24.js"><link rel="prefetch" href="/assets/js/193.a7bd0506.js"><link rel="prefetch" href="/assets/js/194.49b5ee52.js"><link rel="prefetch" href="/assets/js/195.ea0a4cc0.js"><link rel="prefetch" href="/assets/js/196.110e9755.js"><link rel="prefetch" href="/assets/js/197.36c229f5.js"><link rel="prefetch" href="/assets/js/198.cae29c5d.js"><link rel="prefetch" href="/assets/js/199.f2b5218b.js"><link rel="prefetch" href="/assets/js/20.72710bde.js"><link rel="prefetch" href="/assets/js/200.fdd7c2d0.js"><link rel="prefetch" href="/assets/js/201.bd442007.js"><link rel="prefetch" href="/assets/js/202.75a25926.js"><link rel="prefetch" href="/assets/js/203.5f552d66.js"><link rel="prefetch" href="/assets/js/204.20b86b1c.js"><link rel="prefetch" href="/assets/js/205.db4d91b2.js"><link rel="prefetch" href="/assets/js/206.1922ab2e.js"><link rel="prefetch" href="/assets/js/207.c74f43b7.js"><link rel="prefetch" href="/assets/js/208.45883472.js"><link rel="prefetch" href="/assets/js/209.d1cf6d12.js"><link rel="prefetch" href="/assets/js/21.1a1825dc.js"><link rel="prefetch" href="/assets/js/210.c769e70f.js"><link rel="prefetch" href="/assets/js/211.7365ba8f.js"><link rel="prefetch" href="/assets/js/212.0474b9fc.js"><link rel="prefetch" href="/assets/js/213.1fe04d76.js"><link rel="prefetch" href="/assets/js/214.000a622f.js"><link rel="prefetch" href="/assets/js/215.b671325d.js"><link rel="prefetch" href="/assets/js/216.e95b66bd.js"><link rel="prefetch" href="/assets/js/217.5a551d83.js"><link rel="prefetch" href="/assets/js/218.44c1a26d.js"><link rel="prefetch" href="/assets/js/219.fad7d275.js"><link rel="prefetch" href="/assets/js/22.74902609.js"><link rel="prefetch" href="/assets/js/220.a21ecae7.js"><link rel="prefetch" href="/assets/js/221.37e4b898.js"><link rel="prefetch" href="/assets/js/222.53d84f6a.js"><link rel="prefetch" href="/assets/js/223.dd105384.js"><link rel="prefetch" href="/assets/js/224.44fb3d71.js"><link rel="prefetch" href="/assets/js/225.cec6ca6a.js"><link rel="prefetch" href="/assets/js/226.074e529f.js"><link rel="prefetch" href="/assets/js/227.3b64ade2.js"><link rel="prefetch" href="/assets/js/228.246fb884.js"><link rel="prefetch" href="/assets/js/229.fc03a3e8.js"><link rel="prefetch" href="/assets/js/23.6984ccf9.js"><link rel="prefetch" href="/assets/js/230.776e38f9.js"><link rel="prefetch" href="/assets/js/231.03d1bef6.js"><link rel="prefetch" href="/assets/js/232.d78edec4.js"><link rel="prefetch" href="/assets/js/233.d99720bf.js"><link rel="prefetch" href="/assets/js/234.01b4fe37.js"><link rel="prefetch" href="/assets/js/235.db2459e0.js"><link rel="prefetch" href="/assets/js/236.b03ebf4f.js"><link rel="prefetch" href="/assets/js/237.7fc6121f.js"><link rel="prefetch" href="/assets/js/238.3f52ead2.js"><link rel="prefetch" href="/assets/js/239.9ef11d9e.js"><link rel="prefetch" href="/assets/js/24.98dd2e21.js"><link rel="prefetch" href="/assets/js/240.24530a5c.js"><link rel="prefetch" href="/assets/js/241.7a594f46.js"><link rel="prefetch" href="/assets/js/242.e0dbe642.js"><link rel="prefetch" href="/assets/js/243.c070156e.js"><link rel="prefetch" href="/assets/js/244.0351f34c.js"><link rel="prefetch" href="/assets/js/245.18b461e0.js"><link rel="prefetch" href="/assets/js/246.bdc6ae6c.js"><link rel="prefetch" href="/assets/js/247.2c6041e9.js"><link rel="prefetch" href="/assets/js/248.2dd15c2f.js"><link rel="prefetch" href="/assets/js/249.08348b16.js"><link rel="prefetch" href="/assets/js/25.969ea504.js"><link rel="prefetch" href="/assets/js/250.fcee11e9.js"><link rel="prefetch" href="/assets/js/251.aa3a3f7a.js"><link rel="prefetch" href="/assets/js/252.98a7c414.js"><link rel="prefetch" href="/assets/js/253.7fabf943.js"><link rel="prefetch" href="/assets/js/254.93a22b83.js"><link rel="prefetch" href="/assets/js/255.5ebb467d.js"><link rel="prefetch" href="/assets/js/256.3a4a8f55.js"><link rel="prefetch" href="/assets/js/257.7252026e.js"><link rel="prefetch" href="/assets/js/258.c7765e32.js"><link rel="prefetch" href="/assets/js/259.7227f301.js"><link rel="prefetch" href="/assets/js/26.f019e1bf.js"><link rel="prefetch" href="/assets/js/260.8d87c2c4.js"><link rel="prefetch" href="/assets/js/261.98480bcf.js"><link rel="prefetch" href="/assets/js/262.c8f3208b.js"><link rel="prefetch" href="/assets/js/263.3b384d7d.js"><link rel="prefetch" href="/assets/js/264.d00925fd.js"><link rel="prefetch" href="/assets/js/265.690499dc.js"><link rel="prefetch" href="/assets/js/266.85cc947c.js"><link rel="prefetch" href="/assets/js/267.fda94767.js"><link rel="prefetch" href="/assets/js/268.43f66b1e.js"><link rel="prefetch" href="/assets/js/269.2205f71e.js"><link rel="prefetch" href="/assets/js/27.35eacc65.js"><link rel="prefetch" href="/assets/js/270.aed96f88.js"><link rel="prefetch" href="/assets/js/271.8cd27d2d.js"><link rel="prefetch" href="/assets/js/272.712673ad.js"><link rel="prefetch" href="/assets/js/273.cd8c58bf.js"><link rel="prefetch" href="/assets/js/274.6bd8e311.js"><link rel="prefetch" href="/assets/js/275.5ab2e9cc.js"><link rel="prefetch" href="/assets/js/276.e2c5b429.js"><link rel="prefetch" href="/assets/js/277.4b086b84.js"><link rel="prefetch" href="/assets/js/278.5d38d63e.js"><link rel="prefetch" href="/assets/js/279.edb8fa75.js"><link rel="prefetch" href="/assets/js/28.61c90cd4.js"><link rel="prefetch" href="/assets/js/280.c765b068.js"><link rel="prefetch" href="/assets/js/281.a937522e.js"><link rel="prefetch" href="/assets/js/282.125ec04e.js"><link rel="prefetch" href="/assets/js/283.e6620d20.js"><link rel="prefetch" href="/assets/js/284.7e498b39.js"><link rel="prefetch" href="/assets/js/285.bb5ec648.js"><link rel="prefetch" href="/assets/js/286.f620c7ef.js"><link rel="prefetch" href="/assets/js/287.6c985062.js"><link rel="prefetch" href="/assets/js/288.09ac5f96.js"><link rel="prefetch" href="/assets/js/289.da7fb8b7.js"><link rel="prefetch" href="/assets/js/29.0f2747f9.js"><link rel="prefetch" href="/assets/js/290.3bcd8b1d.js"><link rel="prefetch" href="/assets/js/291.fae82f67.js"><link rel="prefetch" href="/assets/js/292.31d37a3a.js"><link rel="prefetch" href="/assets/js/293.f951e38e.js"><link rel="prefetch" href="/assets/js/294.daaa358c.js"><link rel="prefetch" href="/assets/js/295.26bc37af.js"><link rel="prefetch" href="/assets/js/296.cae1a5c4.js"><link rel="prefetch" href="/assets/js/297.e56f8aa3.js"><link rel="prefetch" href="/assets/js/298.2c938251.js"><link rel="prefetch" href="/assets/js/299.cb392fbf.js"><link rel="prefetch" href="/assets/js/3.0b9ed9e6.js"><link rel="prefetch" href="/assets/js/30.b6ab99fe.js"><link rel="prefetch" href="/assets/js/300.2175042f.js"><link rel="prefetch" href="/assets/js/301.40882d81.js"><link rel="prefetch" href="/assets/js/302.9f724843.js"><link rel="prefetch" href="/assets/js/303.d817dcf6.js"><link rel="prefetch" href="/assets/js/304.e138efda.js"><link rel="prefetch" href="/assets/js/305.f63d3ca4.js"><link rel="prefetch" href="/assets/js/306.d7145f6b.js"><link rel="prefetch" href="/assets/js/307.57d09a15.js"><link rel="prefetch" href="/assets/js/308.66011d48.js"><link rel="prefetch" href="/assets/js/309.8d19c2d8.js"><link rel="prefetch" href="/assets/js/31.e4406876.js"><link rel="prefetch" href="/assets/js/310.dc1e9012.js"><link rel="prefetch" href="/assets/js/311.12bcceae.js"><link rel="prefetch" href="/assets/js/312.b6b267f5.js"><link rel="prefetch" href="/assets/js/313.b17025af.js"><link rel="prefetch" href="/assets/js/314.5ab6a2f0.js"><link rel="prefetch" href="/assets/js/315.6d2dce83.js"><link rel="prefetch" href="/assets/js/316.12295cbd.js"><link rel="prefetch" href="/assets/js/317.81a4acac.js"><link rel="prefetch" href="/assets/js/318.1df224eb.js"><link rel="prefetch" href="/assets/js/319.c51d642b.js"><link rel="prefetch" href="/assets/js/32.4acb15fb.js"><link rel="prefetch" href="/assets/js/320.c387fc08.js"><link rel="prefetch" href="/assets/js/321.343a3b21.js"><link rel="prefetch" href="/assets/js/322.4f864a8f.js"><link rel="prefetch" href="/assets/js/323.879a5d0e.js"><link rel="prefetch" href="/assets/js/324.64d1465a.js"><link rel="prefetch" href="/assets/js/325.7b5cdcdc.js"><link rel="prefetch" href="/assets/js/326.305afd09.js"><link rel="prefetch" href="/assets/js/327.73e3f67f.js"><link rel="prefetch" href="/assets/js/328.0b9a6ef1.js"><link rel="prefetch" href="/assets/js/33.ffa9eb0e.js"><link rel="prefetch" href="/assets/js/34.8cc899a9.js"><link rel="prefetch" href="/assets/js/35.a19b0dd4.js"><link rel="prefetch" href="/assets/js/36.cf54dce4.js"><link rel="prefetch" href="/assets/js/37.2a449ab2.js"><link rel="prefetch" href="/assets/js/38.e2eec42a.js"><link rel="prefetch" href="/assets/js/39.42db8919.js"><link rel="prefetch" href="/assets/js/4.77863569.js"><link rel="prefetch" href="/assets/js/40.41483df2.js"><link rel="prefetch" href="/assets/js/41.f9f0e289.js"><link rel="prefetch" href="/assets/js/42.be6da09d.js"><link rel="prefetch" href="/assets/js/43.a822dd31.js"><link rel="prefetch" href="/assets/js/44.5e3996ed.js"><link rel="prefetch" href="/assets/js/45.4e7b14fa.js"><link rel="prefetch" href="/assets/js/46.7fa627f8.js"><link rel="prefetch" href="/assets/js/47.91ed0583.js"><link rel="prefetch" href="/assets/js/48.3fb84f8b.js"><link rel="prefetch" href="/assets/js/49.862d2683.js"><link rel="prefetch" href="/assets/js/5.8615101c.js"><link rel="prefetch" href="/assets/js/50.f4599aaa.js"><link rel="prefetch" href="/assets/js/51.62625db0.js"><link rel="prefetch" href="/assets/js/52.7d72d940.js"><link rel="prefetch" href="/assets/js/53.004f384b.js"><link rel="prefetch" href="/assets/js/54.09876dae.js"><link rel="prefetch" href="/assets/js/55.b648f1ff.js"><link rel="prefetch" href="/assets/js/56.d90e1e1e.js"><link rel="prefetch" href="/assets/js/57.4891a7db.js"><link rel="prefetch" href="/assets/js/58.1c44727a.js"><link rel="prefetch" href="/assets/js/59.a77c81f9.js"><link rel="prefetch" href="/assets/js/6.4d3ff8c3.js"><link rel="prefetch" href="/assets/js/60.5b1e04d7.js"><link rel="prefetch" href="/assets/js/61.9a0da668.js"><link rel="prefetch" href="/assets/js/62.643b4d28.js"><link rel="prefetch" href="/assets/js/63.c0ecb796.js"><link rel="prefetch" href="/assets/js/64.55c9890a.js"><link rel="prefetch" href="/assets/js/65.3b687a66.js"><link rel="prefetch" href="/assets/js/66.a7539c74.js"><link rel="prefetch" href="/assets/js/67.4bdd5ee0.js"><link rel="prefetch" href="/assets/js/68.6cf79a78.js"><link rel="prefetch" href="/assets/js/69.15085636.js"><link rel="prefetch" href="/assets/js/70.1a2757fd.js"><link rel="prefetch" href="/assets/js/71.73e20cbe.js"><link rel="prefetch" href="/assets/js/72.5027b015.js"><link rel="prefetch" href="/assets/js/73.e4bf3de7.js"><link rel="prefetch" href="/assets/js/74.fb462a8b.js"><link rel="prefetch" href="/assets/js/75.33c05e41.js"><link rel="prefetch" href="/assets/js/76.36e4a841.js"><link rel="prefetch" href="/assets/js/77.61ee6bc8.js"><link rel="prefetch" href="/assets/js/78.bb39914e.js"><link rel="prefetch" href="/assets/js/79.e5d7c695.js"><link rel="prefetch" href="/assets/js/8.729486a8.js"><link rel="prefetch" href="/assets/js/80.e890685e.js"><link rel="prefetch" href="/assets/js/82.8e2e122e.js"><link rel="prefetch" href="/assets/js/83.5a3ee580.js"><link rel="prefetch" href="/assets/js/84.61144dc3.js"><link rel="prefetch" href="/assets/js/85.01eb1cdd.js"><link rel="prefetch" href="/assets/js/86.607c9802.js"><link rel="prefetch" href="/assets/js/87.cfcba602.js"><link rel="prefetch" href="/assets/js/88.89084857.js"><link rel="prefetch" href="/assets/js/89.e6369cba.js"><link rel="prefetch" href="/assets/js/9.435f2ca5.js"><link rel="prefetch" href="/assets/js/90.82714f06.js"><link rel="prefetch" href="/assets/js/91.116621c2.js"><link rel="prefetch" href="/assets/js/92.40a69700.js"><link rel="prefetch" href="/assets/js/93.9dddea21.js"><link rel="prefetch" href="/assets/js/94.1d440102.js"><link rel="prefetch" href="/assets/js/95.e3be68ff.js"><link rel="prefetch" href="/assets/js/96.3983888a.js"><link rel="prefetch" href="/assets/js/97.f8dcee4b.js"><link rel="prefetch" href="/assets/js/98.725389a5.js"><link rel="prefetch" href="/assets/js/99.2e7df4c9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.0843139f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.de06d2f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>suichentree's blog</h3> <p class="description" data-v-59e6cb88>(;-_-)ᴇᴍᴍᴍ</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>suichentree</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/user2.png" alt="suichentree's blog" class="logo"> <span class="site-name">suichentree's blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发/" class="nav-link"><i class="undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/系统/" class="nav-link"><i class="undefined"></i>
+  系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/NAS/" class="nav-link"><i class="undefined"></i>
+  NAS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SQLite/" class="nav-link"><i class="undefined"></i>
+  SQLite
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/随笔/" class="nav-link"><i class="undefined"></i>
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/categories/个人项目/" class="nav-link"><i class="undefined"></i>
+  个人项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/数据结构/" class="nav-link"><i class="undefined"></i>
+  算法/数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英文/" class="nav-link"><i class="undefined"></i>
+  英文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软路由/" class="nav-link"><i class="undefined"></i>
+  软路由
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/笔记/" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客/" class="nav-link"><i class="undefined"></i>
+  博客
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/简历/" class="nav-link"><i class="iconfont reco-account"></i>
+  简历
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/面试/" class="nav-link"><i class="iconfont reco-other"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/留言板/messageBoard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/sui_chen_tree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="mailto:18271801652@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  邮件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/user2.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    suichentree
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>288</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>71</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端/" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Docker/" class="nav-link"><i class="undefined"></i>
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/开发/" class="nav-link"><i class="undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/系统/" class="nav-link"><i class="undefined"></i>
+  系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/NAS/" class="nav-link"><i class="undefined"></i>
+  NAS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/服务器/" class="nav-link"><i class="undefined"></i>
+  服务器
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SQLite/" class="nav-link"><i class="undefined"></i>
+  SQLite
+</a></li><li class="dropdown-item"><!----> <a href="/categories/SVN/" class="nav-link"><i class="undefined"></i>
+  SVN
+</a></li><li class="dropdown-item"><!----> <a href="/categories/随笔/" class="nav-link"><i class="undefined"></i>
+  随笔
+</a></li><li class="dropdown-item"><!----> <a href="/categories/个人项目/" class="nav-link"><i class="undefined"></i>
+  个人项目
+</a></li><li class="dropdown-item"><!----> <a href="/categories/算法/数据结构/" class="nav-link"><i class="undefined"></i>
+  算法/数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/英文/" class="nav-link"><i class="undefined"></i>
+  英文
+</a></li><li class="dropdown-item"><!----> <a href="/categories/计算机网络/" class="nav-link"><i class="undefined"></i>
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/categories/软路由/" class="nav-link"><i class="undefined"></i>
+  软路由
+</a></li><li class="dropdown-item"><!----> <a href="/categories/设计模式/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/categories/笔记/" class="nav-link"><i class="undefined"></i>
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/categories/博客/" class="nav-link"><i class="undefined"></i>
+  博客
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      文档
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/简历/" class="nav-link"><i class="iconfont reco-account"></i>
+  简历
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/面试/" class="nav-link"><i class="iconfont reco-other"></i>
+  面试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/留言板/messageBoard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/suichentree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/sui_chen_tree" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="mailto:18271801652@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  邮件
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>Docker笔记2</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>suichentree</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">Docker笔记2</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>suichentree</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>10/12/2023</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><p>[toc]</p> <h1 id="docker笔记2"><a href="#docker笔记2" class="header-anchor">#</a> Docker笔记2</h1> <h2 id="dockerfile"><a href="#dockerfile" class="header-anchor">#</a> Dockerfile</h2> <p>Dockerfile是用来构建docker镜像的脚本文件，文件内容包含了一条条构建镜像所需的指令和参数。</p> <blockquote><p>Dockerfile构建步骤</p></blockquote> <ol><li>编写一个dockerfile文件</li> <li>docker build将dockerfile构建成为一个镜像</li> <li>docker run运行镜像</li> <li>docker push 发布镜像</li></ol> <blockquote><p>编写dockerfile的注意事项：</p></blockquote> <ol><li>每个保留关键字（指令）都是尽量是大写字母并且后面至少有一个参数。</li> <li>dockerfile中的指令是从上到下顺序执行的</li> <li>#表示注释</li> <li>每一个指令都会创建一个新的镜像层并叠加到之前的镜像上。</li></ol> <blockquote><p>docker执行dockerfile的流程如下</p></blockquote> <ol><li>docker从基础镜像上运行一个容器</li> <li>docker开始执行dockerfile上的指令，并根据执行对容器进行修改。</li> <li>修改容器后，docker在执行docker commit命令,提交一个新的镜像层。</li> <li>docker基于刚提交的镜像，再运行一个新的容器。</li> <li>docker执行下一条指令。直到所有指令都执行完成。</li></ol> <h3 id="dockerfile-文件中的常见指令"><a href="#dockerfile-文件中的常见指令" class="header-anchor">#</a> dockerfile 文件中的常见指令</h3> <p><font color="red">Dockerfile 的指令每执行一次都会在原有基础上新建一层新的镜像。所以过多的指令，会造成镜像膨胀过大。</font></p> <h4 id="from-指定基础镜像"><a href="#from-指定基础镜像" class="header-anchor">#</a> FROM 指定基础镜像</h4> <p>FROM命令是用来指定你需要用哪个镜像作为基础镜像进行构建。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 写法如下</span>
+FROM ubuntu
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="run-用于执行后面的linux命令"><a href="#run-用于执行后面的linux命令" class="header-anchor">#</a> RUN 用于执行后面的linux命令</h4> <p>RUN指令是用来执行linux命令的指令。</p> <p>例如ubuntu系统下，需要更新软件包list，就需要执行apt-get update，之后会跟着执行apt-get install</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>RUN有两种语法格式：
+语法1：RUN <span class="token operator">&lt;</span>命令行命令<span class="token operator">&gt;</span>
+<span class="token comment"># &lt;命令行命令&gt; 等同于，在终端操作的 shell 命令。</span>
+
+语法2：RUN <span class="token punctuation">[</span><span class="token string">&quot;可执行文件&quot;</span>, <span class="token string">&quot;参数1&quot;</span>, <span class="token string">&quot;参数2&quot;</span><span class="token punctuation">]</span>
+<span class="token comment"># RUN [&quot;./test.php&quot;, &quot;dev&quot;, &quot;offline&quot;] 等价于 RUN ./test.php dev offline</span>
+
+<span class="token comment"># 如下</span>
+RUN <span class="token function">apt-get</span> update <span class="token parameter variable">-y</span>
+RUN <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">vim</span>
+
+<span class="token comment"># 一般情况下，多个连续执行的linux命令，都会用“\”做换行分割，再用“&amp;&amp;”将命令串联起来</span>
+RUN <span class="token function">apt-get</span> update <span class="token parameter variable">-y</span> <span class="token punctuation">\</span>
+    <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">vim</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>在Dockerfile中，每写一个RUN指令就会在基础镜像上增加一层镜像，Docker对镜像的层数有限制，所以一般情况下，多个连续执行的linux命令，都会用“\”做换行分割，再用“&amp;&amp;”将命令串联起来。</p> <h4 id="maintainer-指定创建镜像的维护者"><a href="#maintainer-指定创建镜像的维护者" class="header-anchor">#</a> MAINTAINER 指定创建镜像的维护者</h4> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 写法如下</span>
+MAINTAINER shuyx<span class="token operator">&lt;</span>xxxxxx@qq.com<span class="token operator">&gt;</span>        <span class="token comment">#镜像维护者信息</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="expose-声明端口"><a href="#expose-声明端口" class="header-anchor">#</a> EXPOSE 声明端口</h4> <p>主要用于声明这个镜像需要暴露的端口，以方便配置映射。当使用随机端口映射时，也就是 docker run -P 时，会自动随机映射 EXPOSE 的端口。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 写法如下</span>
+EXPOSE <span class="token operator">&lt;</span>端口<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>端口<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="workdir-指定工作目录"><a href="#workdir-指定工作目录" class="header-anchor">#</a> WORKDIR 指定工作目录</h4> <p>指定在容器创建后，终端默认登录的工作目录。如该目录不存在，WORKDIR 会自动建立目录。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 写法如下</span>
+WORKDIR <span class="token operator">&lt;</span>工作目录路径<span class="token operator">&gt;</span>
+
+<span class="token comment"># 例如,当容器创建后，终端访问容器，会自动进入到/home/shuyx目录中。</span>
+WORKDIR /home/shuyx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="user-指定用户"><a href="#user-指定用户" class="header-anchor">#</a> USER 指定用户</h4> <p>用于指定执行后续命令的用户和用户组，或者切换后续命令执行的用户（用户和用户组必须提前已经存在）。默认为root用户。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+<span class="token environment constant">USER</span> <span class="token operator">&lt;</span>用户名<span class="token operator">&gt;</span><span class="token punctuation">[</span>:<span class="token operator">&lt;</span>用户组<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 例如</span>
+<span class="token environment constant">USER</span> root
+······
+<span class="token environment constant">USER</span> www
+······
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="env-定义环境变量"><a href="#env-定义环境变量" class="header-anchor">#</a> ENV 定义环境变量</h4> <p>定义了环境变量，那么在在后续的指令中，通过$符号就可以使用这个环境变量。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+ENV <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>value<span class="token operator">&gt;</span>
+ENV <span class="token operator">&lt;</span>key<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span><span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> <span class="token operator">&lt;</span>key<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token punctuation">..</span>.
+
+<span class="token comment"># 示例：</span>
+ENV <span class="token assign-left variable">MY_PATH</span><span class="token operator">=</span>/home/shuyx
+ENV BASE_URL www.songpangpang.com
+
+<span class="token comment"># 后续可以用$来使用之前指定的环境变量</span>
+WORKDIR <span class="token variable">$MY_PATH</span>
+RUN <span class="token function">curl</span> <span class="token parameter variable">-SLO</span> <span class="token string">&quot;https://<span class="token variable">$BASE_URL</span>/&quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="volume-定义容器数据卷"><a href="#volume-定义容器数据卷" class="header-anchor">#</a> VOLUME 定义容器数据卷</h4> <p>VOLUME 定义容器数据卷。在启动容器时会自动挂载容器数据卷。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+VOLUME <span class="token punctuation">[</span><span class="token string">&quot;&lt;宿主机路径&gt;&quot;</span>,<span class="token string">&quot;&lt;镜像路径&gt;&quot;</span><span class="token punctuation">]</span>
+VOLUME <span class="token operator">&lt;</span>路径<span class="token operator">&gt;</span>
+
+<span class="token comment"># 例如</span>
+VOLUME <span class="token punctuation">[</span><span class="token string">&quot;/data&quot;</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="copy-复制文件或目录到镜像中"><a href="#copy-复制文件或目录到镜像中" class="header-anchor">#</a> COPY 复制文件或目录到镜像中</h4> <p>将文件或目录复制到镜像中。</p> <p>COPY可以复制文件，也可以复制目录，可以是相对路径，也可以是绝对路径，docker路径中尽量使用绝对路径，举例如下：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 写法如下</span>
+COPY <span class="token operator">&lt;</span>源路径<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>目标路径<span class="token operator">&gt;</span>
+<span class="token comment"># &lt;源路径&gt;：源文件或者源目录，这里可以是通配符表达式</span>
+<span class="token comment"># &lt;目标路径&gt;：容器内的指定路径。路径不存在的话，会自动创建。</span>
+
+<span class="token comment"># 例如</span>
+<span class="token comment"># 复制home的.env目录的文件到容器的.env目录中</span>
+COPY /home/.env /var/www/html/.env
+<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+
+<span class="token comment"># windows系统下</span>
+COPY f:/docker/ ./
+······
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="add-拷贝文件到镜像中"><a href="#add-拷贝文件到镜像中" class="header-anchor">#</a> ADD 拷贝文件到镜像中</h4> <p>将宿主机的文件拷贝进镜像中，并且会自动处理URL或解压tar压缩包。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+ADD <span class="token operator">&lt;</span>源路径<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>目标路径<span class="token operator">&gt;</span>
+<span class="token comment"># ADD：若源文件为 tar 压缩文件的话，会自动复制并解压到 &lt;目标路径&gt;下。</span>
+
+<span class="token comment"># 例如</span>
+ADD /home/a.txt /var/www/html/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="cmd-启动命令"><a href="#cmd-启动命令" class="header-anchor">#</a> CMD 启动命令</h4> <p>类似于RUN指令，用于运行程序命令。但二者运行的时间点不同，CMD在docker run时运行，RUN是在 docker build时运行。</p> <p>注意：</p> <ul><li>CMD命令用于启动容器时，需要执行的命令，多个CMD命令，仅最后一个生效</li> <li>CMD指令指定的程序命令可以被 docker run 命令行参数中指定要运行的程序命令所覆盖。</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+CMD <span class="token operator">&lt;</span>shell命令<span class="token operator">&gt;</span> 
+CMD <span class="token punctuation">[</span><span class="token string">&quot;&lt;可执行文件或命令&gt;&quot;</span>,<span class="token string">&quot;&lt;param1&gt;&quot;</span>,<span class="token string">&quot;&lt;param2&gt;&quot;</span>,<span class="token punctuation">..</span>.<span class="token punctuation">]</span> 
+CMD <span class="token punctuation">[</span><span class="token string">&quot;&lt;param1&gt;&quot;</span>,<span class="token string">&quot;&lt;param2&gt;&quot;</span>,<span class="token punctuation">..</span>.<span class="token punctuation">]</span>  <span class="token comment"># 该写法是为 ENTRYPOINT 指令指定的程序提供默认参数</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="entrypoint"><a href="#entrypoint" class="header-anchor">#</a> ENTRYPOINT</h4> <p>类似于 CMD 指令，但其不会被 docker run 的命令行参数指定的指令所覆盖，而且这些命令行参数会被当作参数送给 ENTRYPOINT 指令指定的程序。</p> <p>但是, 如果运行 docker run 时使用了 --entrypoint 选项，将覆盖 ENTRYPOINT 指令指定的程序。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;&lt;可执行文件或命令&gt;&quot;</span>,<span class="token string">&quot;&lt;param1&gt;&quot;</span>,<span class="token string">&quot;&lt;param2&gt;&quot;</span>,<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="docker-build-命令"><a href="#docker-build-命令" class="header-anchor">#</a> docker build 命令</h3> <p>当我们编写好Dockerfile文件，便可以通过docker build 命令把Dockerfile文件 创建为镜像。</p> <p>docker build 命令的用法</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法1如下 注意最后有个小点.</span>
+<span class="token comment"># 最后的那个点表示为当前路径下的Dockerfile文件</span>
+<span class="token comment"># 如果Dockerfile文件不在当前路径下，可以通过-f参数来指定Dockerfile文件路径。</span>
+<span class="token function">docker</span> build <span class="token parameter variable">-t</span> 新的镜像名称<span class="token punctuation">[</span>:版本号<span class="token punctuation">]</span> <span class="token builtin class-name">.</span>
+
+<span class="token comment"># 语法2如下，如果指定了文件路径，就不需要后面加上小点。</span>
+<span class="token comment"># -f 指定Dockerfile的文件路径。</span>
+<span class="token comment"># -t 指定镜像的名字</span>
+<span class="token function">docker</span> build <span class="token parameter variable">-f</span> /home/ <span class="token parameter variable">-t</span> 新的镜像名称<span class="token punctuation">[</span>:版本号<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>以下是docker build 命令的常用案例。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 1. 使用当前目录的 Dockerfile 创建镜像，标签为 shuyx/ubuntu:v1</span>
+<span class="token function">docker</span> build <span class="token parameter variable">-t</span> shuyx/ubuntu:v1 <span class="token builtin class-name">.</span> 
+
+<span class="token comment"># 2. 使用URL github.com/creack/docker-firefox 的 Dockerfile 创建镜像</span>
+<span class="token function">docker</span> build github.com/creack/docker-firefox <span class="token parameter variable">-t</span> shuyx/ubuntu:v1
+
+<span class="token comment"># 3. 通过 -f 指定 Dockerfile 文件的位置</span>
+<span class="token function">docker</span> build <span class="token parameter variable">-f</span> /path/Dockerfile <span class="token parameter variable">-t</span> shuyx/ubuntu:v1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>注意,在 Docker 守护进程执行 Dockerfile 中的指令前，首先会对 Dockerfile 进行语法检查，如果有语法错误时会返回下面代码。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ <span class="token function">docker</span> build <span class="token parameter variable">-t</span> shuyx/ubuntu:v1 <span class="token builtin class-name">.</span> 
+Sending build context to Docker daemon <span class="token number">2.048</span> kB
+Error response from daemon: Unknown instruction: RUNCMD
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="dockerfile-基于centos7镜像安装jdk"><a href="#dockerfile-基于centos7镜像安装jdk" class="header-anchor">#</a> dockerfile 基于centos7镜像安装jdk</h3> <ol><li>下载jdk安装包</li></ol> <p>下载jdk-8u371-linux-x64.tar.gz,上传到/usr/local/jdk下，这个文件目录需要自己创建</p> <ol start="2"><li>创建Dockerfile文件，注意Dockerfile的D需要大写</li></ol> <p>在/usr/local/jdk下创建Dockerfile文件。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 创建dockerfile文件，并编写</span>
+<span class="token builtin class-name">cd</span> /usr/local/jdk
+<span class="token function">touch</span> Dockefile
+<span class="token function">vim</span> Dockefile
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Dockerfile文件内容如下</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 基础镜像</span>
+FROM centos7
+<span class="token comment">#维护者信息</span>
+MAINTAINER shuyx<span class="token operator">&lt;</span>xxxxx@qq.com<span class="token operator">&gt;</span>          
+
+<span class="token comment"># 安装vim编辑器,net-tools工具查询ip</span>
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> <span class="token function">vim</span>
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> net-tools
+<span class="token comment"># 安装glibc.i686库</span>
+RUN yum <span class="token parameter variable">-y</span> <span class="token function">install</span> glibc.i686
+
+<span class="token comment"># 安装java8</span>
+<span class="token comment">#新建目录</span>
+RUN <span class="token function">mkdir</span> /usr/local/jdk   
+<span class="token comment">#指定工作目录          </span>
+WORKDIR /usr/local/jdk                 
+
+<span class="token comment"># 将jdk文件拷贝到容器的/usr/local/jdk并解压 </span>
+ADD  jdk-8u371-linux-x64.tar.gz /usr/local/jdk
+<span class="token comment"># 设置环境变量 </span>
+ENV JAVA_HOME /usr/local/jdk/jdk1.8.0_371
+ENV JRE_HOME /usr/local/jdk/jdk1.8.0_371/jre
+ENV CLASSPATH <span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar:<span class="token variable">$JRE_HOME</span>/lib:<span class="token variable">$CLASSPATH</span>
+ENV <span class="token environment constant">PATH</span> <span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><ol start="3"><li>进入到Dockerfile文件的存放目录下，开始构建镜像</li></ol> <p>注意要在 Dockerfile 文件的存放目录下，执行构建命令。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 执行当前目录的Dockerfile来构建镜像</span>
+<span class="token comment"># 镜像名为shuyx/jdk8-01:v1</span>
+<span class="token function">docker</span> build <span class="token parameter variable">-t</span> shuyx/jdk8-01:v1 <span class="token builtin class-name">.</span> 
+
+<span class="token comment"># 查看镜像文件是否构建成功 </span>
+<span class="token function">docker</span> images
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ol start="4"><li>根据新镜像创建容器并启动</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 开始运行</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-it</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>jdk1.8 shuyx/jdk8-01:v1 /bin/bash
+
+<span class="token comment">#进入容器查看JDK是否安装成功 </span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> jdk1.8 /bin/bash 
+<span class="token operator">&gt;</span> <span class="token function">java</span> <span class="token parameter variable">-version</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="dockerfile-基于ubuntu镜像安装jdk"><a href="#dockerfile-基于ubuntu镜像安装jdk" class="header-anchor">#</a> dockerfile 基于ubuntu镜像安装jdk</h3> <p>Dockerfile文件内容如下,其他步骤参考上面。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 以ubuntu为基础镜像</span>
+FROM ubuntu:18.04
+
+<span class="token comment"># 指明该镜像的作者</span>
+MAINTAINER shuyx
+
+<span class="token comment"># 更新apt源</span>
+RUN <span class="token function">sed</span> <span class="token parameter variable">-i</span> s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list <span class="token punctuation">\</span>
+    <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> <span class="token parameter variable">-i</span> s/security.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list 
+
+<span class="token comment"># 复制linux版本jdk压缩包到镜像内</span>
+COPY /jdk-8u381-linux-x64.tar.gz /usr/java/jdk-8u381-linux-x64.tar.gz
+<span class="token comment"># 解压缩jdk到指定目录</span>
+RUN <span class="token function">mkdir</span> /usr/java/jdk
+RUN <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> /usr/java/jdk-8u381-linux-x64.tar.gz <span class="token parameter variable">-C</span> /usr/java/jdk
+
+<span class="token comment"># 设置JAVA_HOME、CLASSPATH、PATH环境变量</span>
+ENV <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/java/jdk/jdk1.8.0_381
+ENV <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar
+ENV <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+
+RUN <span class="token function">apt</span> update
+<span class="token comment"># 设置启动命令，打印jdk版本</span>
+CMD <span class="token punctuation">[</span><span class="token string">&quot;java&quot;</span>, <span class="token string">&quot;-version&quot;</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="dockerfile-基于jdk镜像部署jar包"><a href="#dockerfile-基于jdk镜像部署jar包" class="header-anchor">#</a> dockerfile 基于jdk镜像部署jar包</h3> <ol><li>先将jar包上传到宿主机的某个目录中，并在该目录中创建Dockerfile文件</li></ol> <p>Dockerfile文件内容如下</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 基础镜像</span>
+FROM java:8
+<span class="token comment">#维护者信息</span>
+MAINTAINER shuyx<span class="token operator">&lt;</span>xxxxx@qq.com<span class="token operator">&gt;</span>          
+
+<span class="token comment"># 将aaa.jar上传到容器中并更名为bbb.jar</span>
+ADD aaa.jar bbb.jar
+
+<span class="token comment"># 运行bbb.jar包</span>
+RUN <span class="token function">bash</span> <span class="token parameter variable">-c</span> <span class="token string">'touch /bbb.jar'</span>
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;java&quot;</span>,<span class="token string">&quot;-jar&quot;</span>,<span class="token string">&quot;//bbb.jar&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 暴露端口</span>
+EXPOSE <span class="token number">8081</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><ol start="2"><li>在与Dockerfile文件同目录的情况下，开始构建镜像</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 开始构建镜像</span>
+<span class="token function">docker</span> build <span class="token parameter variable">-t</span> shuyx/aaa:v1 <span class="token builtin class-name">.</span>
+
+<span class="token comment"># 查询镜像</span>
+<span class="token function">docker</span> images
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="docker-网络"><a href="#docker-网络" class="header-anchor">#</a> Docker 网络</h2> <blockquote><p>Docker网络是什么？</p></blockquote> <p>Docker网络是Docker容器之间和容器与外部网络之间的通信和连接的一种机制。在Docker中，每个容器都可以有自己的网络接口、IP地址和网络配置等。</p> <blockquote><p>Docker网络能做什么？</p></blockquote> <p>在docker中，容器的每次重启都会导致容器的ip发生变化。这也意味着如果容器间使用ip地址来进行互相通信的话，一旦有容器重启，重启的容器将不再能被访问到。</p> <p>而Docker网络可以实现容器之间的互联以及端口映射，并且容器IP变动的时候可以通过容器名直接网络通信而不受影响。</p> <h3 id="docker网络-相关的命令"><a href="#docker网络-相关的命令" class="header-anchor">#</a> docker网络 相关的命令</h3> <blockquote><p>查询docker中的所有网络</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法</span>
+<span class="token function">docker</span> network <span class="token function">ls</span> 
+
+<span class="token comment"># 例如</span>
+<span class="token comment"># 可以通过 docker network ls 命令来查询docker中的网络</span>
+qwe@ubuntu:~/Desktop$ <span class="token function">docker</span> network <span class="token function">ls</span>
+NETWORK ID     NAME      DRIVER    SCOPE
+e806a6373a89   bridge    bridge    <span class="token builtin class-name">local</span>
+ea48da9dbf76   <span class="token function">host</span>      <span class="token function">host</span>      <span class="token builtin class-name">local</span>
+f3ab3fef5588   none      null      <span class="token builtin class-name">local</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>docker安装后，默认情况会存在上面三种网络，每个网络都有不同的用处。同时我们也可以自定义docker网络。</p> <blockquote><p>查询网络的具体信息</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法</span>
+<span class="token function">docker</span> network inspect 网络名称  
+
+<span class="token comment"># 例如，查询bridge网络的具体信息</span>
+<span class="token function">docker</span> network inspect bridge
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="/assets/img/docker_20231022194618.1b0656e6.png" alt="docker_20231022194618.png"></p> <blockquote><p>创建自定义网络</p></blockquote> <p>当不指定网络模式的情况下，创建的自定义网络，默认是bridge(桥接)模式。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法</span>
+<span class="token function">docker</span> network create 网络名称
+
+<span class="token comment"># 例如，创建一个网络，名为my_network</span>
+<span class="token function">docker</span> network create my_network
+
+<span class="token comment"># 创建网络时是可以添加一系列参数的：</span>
+<span class="token comment"># --driver：驱动程序类型</span>
+<span class="token comment"># --gateway：主子网的IPV4和IPV6的网关</span>
+<span class="token comment"># --subnet：代表网段的CIDR格式的子网</span>
+<span class="token comment"># my_network：自定义网络名称</span>
+<span class="token function">docker</span> network create <span class="token parameter variable">--driver</span><span class="token operator">=</span>bridge <span class="token parameter variable">--gateway</span><span class="token operator">=</span><span class="token number">192.168</span>.137.1 <span class="token parameter variable">--subnet</span><span class="token operator">=</span><span class="token number">192.168</span>.137.0/16 my_network
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><blockquote><p>让容器连接某个docker网络</p></blockquote> <p>注意容器可以连接多个docker网络。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法</span>
+<span class="token function">docker</span> network connect 网络名称 容器名称
+
+<span class="token comment"># 例如,mysql01容器连接my_network网络</span>
+<span class="token function">docker</span> network connect my_network mysql01
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>让容器断开某个docker网络</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法</span>
+<span class="token function">docker</span> network disconnect 网络名称 容器名称
+
+<span class="token comment"># 例如,mysql01容器断开my_network网络</span>
+<span class="token function">docker</span> network disconnect my_network mysql01
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>删除网络</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+<span class="token function">docker</span> network <span class="token function">rm</span> 网络名称1 网络名称2<span class="token punctuation">..</span>.
+
+<span class="token comment"># 例如 删除my_network网络</span>
+<span class="token function">docker</span> network <span class="token function">rm</span> my_network
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>删除所有没有使用的网络</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 语法如下</span>
+<span class="token function">docker</span> network prune
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="docker-网络的四种模式"><a href="#docker-网络的四种模式" class="header-anchor">#</a> Docker 网络的四种模式</h3> <p>Docker 网络有4种模式：host,bridge,none,container。</p> <p>当创建容器的时候，即docker run的时候，可以给容器设置网络模式。默认的网络模式是bridge。</p> <table><thead><tr><th>网络模式</th> <th>命令指定方式</th> <th>介绍</th></tr></thead> <tbody><tr><td>bridge</td> <td>--network=bridge</td> <td>默认网络模式。此模式会为每一个容器单独分配网络、设置IP等，并将容器连接到docker0虚拟网桥。并通过docker0网桥与宿主机通信。</td></tr> <tr><td>host</td> <td>--network=host</td> <td>容器不会创建自己的网卡，配置ip等，而是使用宿主机的 ip 和端口</td></tr> <tr><td>none</td> <td>--network=none</td> <td>新创建的容器不会创建自己的网卡和配置自己的ip，而是和一个指定的容器共享ip、端口范围</td></tr> <tr><td>container</td> <td>--network=container:容器名称或容器id</td> <td>新创建的容器不会创建自己的网卡和配置自己的ip，而是和一个指定的容器共享ip、端口范围</td></tr></tbody></table> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 例如</span>
+<span class="token function">docker</span> run mysql:5.7
+<span class="token function">docker</span> run <span class="token parameter variable">--network</span><span class="token operator">=</span>bridge mysql:5.7
+<span class="token function">docker</span> run <span class="token parameter variable">--network</span><span class="token operator">=</span>host mysql:5.7
+<span class="token function">docker</span> run <span class="token parameter variable">--network</span><span class="token operator">=</span>none mysql:5.7
+<span class="token comment"># 通过mysql:5.7镜像创建一个新容器，新容器与tomcat01容器共享网络</span>
+<span class="token function">docker</span> run <span class="token parameter variable">--network</span><span class="token operator">=</span>container:tomcat01 mysql:5.7
+<span class="token comment"># -net是--network的简写</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-net</span><span class="token operator">=</span>bridge mysql:5.7
+<span class="token comment"># 例如用ubuntu容器创建容器，指定该容器连接host网络</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--network</span><span class="token operator">=</span>host ubuntu /bin/bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h4 id="docker0虚拟网桥"><a href="#docker0虚拟网桥" class="header-anchor">#</a> docker0虚拟网桥</h4> <p>Docker启动的时候会在宿主机上创建一个docker0虚拟网桥，每个容器在默认情况（bridge桥接模式）下会挂载到docker0虚拟网桥上。这样容器就可以和宿主机甚至是其他容器之间互相通讯了。</p> <p>简而言之,在默认情况（bridge桥接模式）下每创建一个容器，docker0虚拟网桥会分配一个ip给该容器。容器会记录下网桥的ip。这样容器和网桥就会记住双方的ip，因此双方就可以进行通讯。</p> <ul><li>桥接模式下宿主机和docker通讯是通过docker0虚拟网桥实现的。</li> <li>桥接模式下docker容器之间通信是通过docker0虚拟网桥中转的,因为docker0虚拟网桥会记录下所有运行的容器的ip。</li></ul> <h4 id="bridge桥接模式"><a href="#bridge桥接模式" class="header-anchor">#</a> bridge桥接模式</h4> <p>bridge桥接模式是默认的网络模式。此模式会为每一个容器单独分配网络、设置IP等，并将容器连接到docker0虚拟网桥。并通过docker0虚拟网桥与宿主机通信。</p> <p>bridge桥接模式原理图
+<img src="/assets/img/docker_20231022211535.bcd7f087.png" alt="docker_20231022211535.png"></p> <p>如图所示，在容器中的网卡接口叫eth0,在虚拟网桥上的接口叫veth。docker0虚拟网桥上面的每个veth匹配某个容器实例内部的eth0，两两配对。</p> <h4 id="host主机模式"><a href="#host主机模式" class="header-anchor">#</a> host主机模式</h4> <p>主机模式下，容器不创建任何网络接口，直接使用宿主机的 ip地址与外界进行通信，不再需要额外进行NAT转换。</p> <p>host主机模式原理图
+<img src="/assets/img/docker_20231022212916.ed4b64cc.png" alt="docker_20231022212916.png"></p> <p>如图所示，主机模式下容器网络是不需要docker0虚拟网桥的。而是直接使用宿主机的网络。这样的好处是宿主机与容器可以直接通信。</p> <p>注意：docker run创建容器时，若指定--network=host或-net=host，如果还指定了-p映射端口，此时会警告端口无法使用。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>NARNING: Published ports are discarded when using <span class="token function">host</span> network mode
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>因为host主机模式下，通过-p设置的端口参数将不会起到任何作用，端口号会以主机端口号为主，重复时则递增。</p> <h4 id="container-容器模式"><a href="#container-容器模式" class="header-anchor">#</a> container 容器模式</h4> <p>container 容器模式原理图
+<img src="/assets/img/docker_20231022213535.a9e34f23.png" alt="docker_20231022213535.png"></p> <p>如图所示，新建的容器和已经存在的一个容器共享一个网络ip配置而不是和宿主机共享。两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。</p> <h4 id="none模式"><a href="#none模式" class="header-anchor">#</a> none模式</h4> <p>在none模式下，并不为Docker容器进行任何网络配置。即这个Docker容器没有网卡、ip、路由等信息，只有一个lo本地接口。</p> <p>lo本地接口表示禁用网络功能，即：127.0.0.1，本地回环的意思</p> <h3 id="自定义网络"><a href="#自定义网络" class="header-anchor">#</a> 自定义网络</h3> <blockquote><p>为什么使用自定义网络</p></blockquote> <p>在docker中，容器的每次重启都会导致容器的ip发生变化。这也意味着如果容器间使用ip地址来进行互相通信的话，一旦有容器重启，重启的容器将不再能被访问到。</p> <p>而当我们自定义网络，便可以容器IP变动的时候。通过ping + 容器名来直接进行网络通信而不受影响IP变动的影响。</p> <p>在实际开发中更推荐使用自定义的网络进行容器管理，以及启用容器名称到 IP 地址的自动 DNS 解析。</p> <p><font color="red">总结：自定义网络本身就维护了主机名和IP的对应关系（IP和域名都能通）</font></p> <ol><li>创建自定义网络</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">docker</span> network create my_network
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="2"><li>将容器添加到自定义网络中</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 把容器加入到自定义网络</span>
+<span class="token function">docker</span> network connect my_network mysql01
+<span class="token function">docker</span> network connect my_network mysql02
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ol start="3"><li>开始ping+容器名</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 进入到mysql01容器的终端中</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql01 /bin/bash
+<span class="token operator">&gt;</span> <span class="token function">ping</span> mysql02
+PING mysql02 <span class="token punctuation">(</span><span class="token number">172.19</span>.0.3<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from mysql02.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.3<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.269</span> ms
+<span class="token number">64</span> bytes from mysql02.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.3<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.102</span> ms
+<span class="token number">64</span> bytes from mysql02.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.3<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.094</span> ms
+<span class="token number">64</span> bytes from mysql02.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.3<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">4</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.082</span> ms
+
+<span class="token comment"># 进入到mysql02容器的终端中</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql02 /bin/bash
+<span class="token operator">&gt;</span> <span class="token function">ping</span> mysql01
+PING mysql01 <span class="token punctuation">(</span><span class="token number">172.19</span>.0.4<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from mysql01.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.4<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.132</span> ms
+<span class="token number">64</span> bytes from mysql01.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.4<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.111</span> ms
+<span class="token number">64</span> bytes from mysql01.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.4<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.222</span> ms
+<span class="token number">64</span> bytes from mysql01.my_network <span class="token punctuation">(</span><span class="token number">172.19</span>.0.4<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">4</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.333</span> ms
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker-compose</h2> <blockquote><p>Docker-compose是什么?</p></blockquote> <p>Docker-Compose 项目是 Docker 官方的开源项目，负责实现对 Docker 容器集群的快速编排。即用于批量管理多个Docker 容器。</p> <p>在日常工作中，一个项目往往需要多个容器相互配合来运行。例如实现一个Web项目,除了Web服务容器,还需要数据库服务容器,负载均衡容器等。</p> <p>而Docker-compose可以批量管理多个Docker 容器。它允许用户通过一个单独的docker-compose.yml 模板文件，来定义一组相关联的应用容器为一个项目（project）。</p> <p>简单来说：Docker-compose就是用来管理多个容器的，定义启动顺序的，合理编排，方便管理。</p> <blockquote><p>Docker-compose的两个核心概念</p></blockquote> <p>服务 ( service )：一个应用的容器，实际上可以包括若干个运行相同镜像的容器实例。
+项目 ( project )：由一组关联的应用容器组成的一个完整业务单元，在 docker-compose.yml 文件中定义。</p> <blockquote><p>Docker-compose的使用步骤</p></blockquote> <ol><li>先编写项目中各个容器用到的dockerfile文件，然后通过dockerfile命令构建好各个镜像。</li> <li>再编写docker-compose.yml。</li> <li>执行docker-compose up命令，来批量创建项目中的各个容器。</li></ol> <h3 id="ubuntu安装docker-compose"><a href="#ubuntu安装docker-compose" class="header-anchor">#</a> ubuntu安装docker-compose</h3> <p>docker-compose是docker的独立产品，因此需要安装docker之后再单独安装docker compose。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 下载并安装docker-compose到/usr/local/bin/docker-compose目录中</span>
+<span class="token function">curl</span> <span class="token parameter variable">-SL</span> https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 <span class="token parameter variable">-o</span> /usr/local/bin/docker-compose
+
+<span class="token comment"># 赋予docker-compose目录中的文件可执行权限</span>
+<span class="token comment"># linux系统中，只有被赋予执行权限的文件才能执行。普通文件不能被执行。</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+
+<span class="token comment"># 查询docker-compose的版本</span>
+<span class="token function">docker-compose</span> version
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><img src="/assets/img/docker_20231023185503.29f4eea8.png" alt="docker_20231023185503.png"></p> <p>如何卸载docker-compose,直接删除即可</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">sudo</span> <span class="token function">rm</span> /usr/local/bin/docker-compose
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="docker-compose常用命令"><a href="#docker-compose常用命令" class="header-anchor">#</a> docker-compose常用命令</h3> <p>运行这些命令需要结合docker-compose一起使用。并且必须要在docker-compose.yml文件的所在目录中才可以使用，不然报错。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 帮助命令</span>
+<span class="token function">docker-compose</span> <span class="token parameter variable">--help</span>
+<span class="token function">docker-compose</span> <span class="token parameter variable">-h</span>
+
+<span class="token comment"># 检查docker-compose的配置</span>
+<span class="token function">docker-compose</span> config 
+<span class="token function">docker-compose</span> config <span class="token parameter variable">-q</span>
+
+<span class="token comment"># 重启docker-compose</span>
+<span class="token function">docker-compose</span> restart
+
+<span class="token comment"># 启动docker-compose</span>
+<span class="token function">docker-compose</span> start
+
+<span class="token comment"># 停止docker-compose</span>
+<span class="token function">docker-compose</span> stop
+
+<span class="token comment"># 启动命令</span>
+<span class="token comment"># 启动所有docker-compose服务</span>
+<span class="token function">docker-compose</span> up 
+<span class="token comment"># 启动所有docker-compose服务并后台运行</span>
+<span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
+
+<span class="token comment"># 停止命令</span>
+<span class="token comment"># 停止所有up 命令所启动的容器，并移除⽹络，镜像等</span>
+<span class="token function">docker-compose</span> down 
+
+<span class="token comment"># 查询当前docker-compose编排的运行的容器</span>
+<span class="token function">docker-compose</span> <span class="token function">ps</span>
+
+<span class="token comment"># 查询当前docker-compose编排的容器进行</span>
+<span class="token function">docker-compose</span> <span class="token function">top</span>
+
+<span class="token comment"># 进入docker-compose编排的容器终端</span>
+<span class="token function">docker-compose</span> <span class="token builtin class-name">exec</span> yml文件中的服务id /bin/bash
+
+<span class="token comment"># 查询docker-compose编排的容器日志</span>
+<span class="token function">docker-compose</span> logs yml文件中的服务id
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h3 id="docker-compose-yml文件"><a href="#docker-compose-yml文件" class="header-anchor">#</a> docker-compose.yml文件</h3> <p>下面是一个docker-compose.yml文件的范例</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment"># 指定Compose文件版本号，当前版本为3。</span>
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+<span class="token comment"># 定义每个服务（即容器）的配置信息，包括服务名称、镜像、端口映射、环境变量等。</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token comment"># 容器名称</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token comment"># 容器的内部工作目录</span>
+    <span class="token key atrule">working_dir</span><span class="token punctuation">:</span> <span class="token string">&quot;/usr/local&quot;</span>
+    <span class="token comment"># 容器运行后的启动命令</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">&quot;redis.server /etc/redis/redis.conf&quot;</span>  
+    <span class="token comment"># redis容器使用到的镜像</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>alpine
+    <span class="token comment"># redis容器的端口映射</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;6379:6379&quot;</span>
+    <span class="token comment"># 容器需要连接的docker网络</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my_network
+
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span><span class="token number">9.4</span>
+    <span class="token comment"># 设置容器数据卷</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /home/db<span class="token punctuation">-</span>data<span class="token punctuation">:</span>/var/lib/db<span class="token punctuation">-</span>data
+    <span class="token comment"># 设定容器的环境变量</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=example  
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my_network
+ 
+  <span class="token comment"># 后端服务的容器</span>
+  <span class="token key atrule">backend-service01</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> shuyx/xxx<span class="token punctuation">:</span>latest
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8000<span class="token punctuation">:</span><span class="token number">80</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my_network
+    <span class="token comment"># 依赖关系，表示该容器依赖redis和db容器。因此该容器会在redis和db容器启动后，在启动。</span>
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> redis
+      <span class="token punctuation">-</span> db
+ 
+  <span class="token comment"># 前端服务的容器</span>
+  <span class="token key atrule">frontend-service01</span><span class="token punctuation">:</span>
+    <span class="token comment"># build属性用于指定dockerfile文件的路径。</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> /homg/dockerfile
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9000<span class="token punctuation">:</span><span class="token number">80</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> my_network
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> redis
+      <span class="token punctuation">-</span> db
+
+<span class="token comment"># 设置docker网络，创建一个名为my_network的网络</span>
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my_network</span><span class="token punctuation">:</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><p>docker-compose.yml文件中有许多配置属性。下面来解释一下。具体的全部属性，需要自行去官网查询。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>version：指定Compose文件版本号，当前版本为3。
+
+services：定义每个服务（即容器）的配置信息，包括服务名称、镜像、端口映射、环境变量等。
+
+working_dir：定义容器中的工作目录。
+
+command： 定义容器的启动后默认执行的命令
+
+networks：定义网络配置信息，包括网络名称、IP地址段等。
+
+volumes：定义数据卷配置信息，包括挂载点和卷类型等。
+
+environment/env_file：设置环境变量，可以在services和networks级别设置全局或者在单个服务中设置特定环境变量。env_file属性用于从文件中读取环境变量。
+
+ports/expose：ports属性用于将容器端口映射到主机上的端口，expose属性则仅暴露容器内部端口而不进行映射。
+
+volumes：设置容器的数据卷。
+
+depends_on/links：depends_on属性用于指定依赖关系，在启动时需要先启动依赖的服务。links属性则用于创建链接到其他容器或服务中的别名。
+
+restart/recreate/no-recreate: 设置容器重启策略。restart属性值有no、always、on-failure三种。recreate表示在容器停止后重新创建新的实例；no-recreate则表示不会重新创建新的实例。
+
+deploy：用于在Docker Swarm中部署服务时定义服务的配置信息，包括副本数、更新策略等。
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><blockquote><p>build属性</p></blockquote> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">build</span><span class="token punctuation">:</span> 用于指定Dockerfile文件所在路径。通常有几种用法
+
+用法1：Dockerfile文件的绝对路径
+<span class="token key atrule">build</span><span class="token punctuation">:</span> /path/to/build/dir
+
+用法2：Dockerfile文件的相对路径
+<span class="token key atrule">build</span><span class="token punctuation">:</span> ./dir
+
+用法3：设置上下文根目录，然后以该目录为准指定Dockerfile
+<span class="token key atrule">build</span><span class="token punctuation">:</span>
+  <span class="token key atrule">context</span><span class="token punctuation">:</span> ../
+  <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> path/Dockerfile
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><blockquote><p>build属性的conteng属性</p></blockquote> <p>context选项可以是Dockerfile的文件路径，也可以是到链接到git仓库的url，当提供的值是相对路径时，会被解析为相对于Dockerfile文件的路径</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">build</span><span class="token punctuation">:</span>
+  <span class="token key atrule">context</span><span class="token punctuation">:</span> ../
+  <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> path/Dockerfile
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>volumes属性</p></blockquote> <p>用于设置容器的数据卷。有几种用法</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token comment">## 只是指定一个路径，Docker仅仅会自动在容器内创建一个目录。</span>
+  <span class="token punctuation">-</span> /var/lib/mysql
+  <span class="token comment">## 使用绝对路径挂载数据卷</span>
+  <span class="token punctuation">-</span> /opt/data<span class="token punctuation">:</span>/var/lib
+  <span class="token comment">## 以docker-compose.yml文件为中心的相对路径作为数据卷挂载到容器</span>
+  <span class="token punctuation">-</span> ./cache<span class="token punctuation">:</span>/var/lib
+  <span class="token comment">## 使用用户的相对路径（~/ 表示的目录是 /home/&lt;用户目录&gt;/ 或者 /root/）</span>
+  <span class="token punctuation">-</span> ~/configs<span class="token punctuation">:</span>/etc/configs/<span class="token punctuation">:</span>ro
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><blockquote><p>expose属性</p></blockquote> <p>暴露容器内部的端口，但不映射到宿主机，用于容器服务提供。</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">expose</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;3000&quot;</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;8000&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>environment属性</p></blockquote> <p>设置环境变量，可以使用数组或字典两种格式。</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment">#格式1</span>
+<span class="token key atrule">environment</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> RUN_ACTIVE=test
+    <span class="token punctuation">-</span> DB_HOST=192.168.100.112
+<span class="token comment">#格式2</span>
+<span class="token key atrule">environment</span><span class="token punctuation">:</span>
+    RUN_ACTIVE<span class="token punctuation">:</span>test
+    DB_HOST<span class="token punctuation">:</span>192.168.100.112
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="docker-compose-创建-mysql和redis容器"><a href="#docker-compose-创建-mysql和redis容器" class="header-anchor">#</a> docker-compose 创建 mysql和redis容器</h3> <ol><li>先准备各个文件</li></ol> <p>文件路径如下</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>docker/mysql-redis/docker-compose.yml
+docker/mysql-redis/mysql
+docker/mysql-redis/my.cnf
+docker/mysql-redis/redis
+docker/mysql-redis/redis.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="2"><li>编辑好my.cnf配置文件和redis.conf配置文件</li></ol> <p>配置文件内容，自行编辑。</p> <ol start="3"><li>编写docker-compose.yml</li></ol> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysql</span><span class="token punctuation">:</span>
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> mysql
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>5.7.26
+    <span class="token comment"># 指定容器名称，如果不设置此参数，则由系统自动生成</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql
+    <span class="token comment"># 设置容器自启模式</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token comment"># 容器启动命令，设置utf8字符集 </span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> mysqld <span class="token punctuation">-</span><span class="token punctuation">-</span>character<span class="token punctuation">-</span>set<span class="token punctuation">-</span>server=utf8mb4 <span class="token punctuation">-</span><span class="token punctuation">-</span>collation<span class="token punctuation">-</span>server=utf8mb4_unicode_ci
+    <span class="token comment"># 设置环境变量</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai <span class="token comment"># 设置容器时区与宿主机保持一致</span>
+      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=123456 <span class="token comment"># 设置root密码</span>
+    <span class="token comment"># 设置容器数据卷 </span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+       <span class="token punctuation">-</span> /etc/localtime<span class="token punctuation">:</span>/etc/localtime<span class="token punctuation">:</span>ro <span class="token comment"># 设置容器时区与宿主机保持一致</span>
+       <span class="token punctuation">-</span> /docker/mysql<span class="token punctuation">-</span>redis/mysql<span class="token punctuation">:</span>/var/lib/mysql/data <span class="token comment"># 映射数据库保存目录到宿主机，防止数据丢失</span>
+       <span class="token punctuation">-</span> /docker/mysql<span class="token punctuation">-</span>redis/my.cnf<span class="token punctuation">:</span>/etc/mysql/my.cnf <span class="token comment"># 映射数据库配置文件</span>
+    <span class="token comment"># 设置端口映射</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token string">&quot;3306:3306&quot;</span>
+
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>  
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> redis
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>5.0.4
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> redis<span class="token punctuation">-</span>server /etc/redis.conf <span class="token comment"># 启动redis命令</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> TZ=Asia/Shanghai
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> /etc/localtime<span class="token punctuation">:</span>/etc/localtime<span class="token punctuation">:</span>ro <span class="token comment"># 设置容器时区与宿主机保持一致</span>
+      <span class="token punctuation">-</span> /docker/mysql<span class="token punctuation">-</span>redis/redis<span class="token punctuation">:</span>/data
+      <span class="token punctuation">-</span> /docker/mysql<span class="token punctuation">-</span>redis/redis.conf<span class="token punctuation">:</span>/etc/redis.conf
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token string">&quot;6379:6379&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><ol start="4"><li>运行docker-compose.yml来创建容器</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 先检查yaml文件配置是否有误</span>
+<span class="token function">docker-compose</span> config <span class="token parameter variable">-q</span>
+<span class="token comment"># 然后在创建容器</span>
+<span class="token function">docker-compose</span> <span class="token parameter variable">-f</span> docker-compose.yml up <span class="token parameter variable">-d</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="docker-图形化管理工具-portainer"><a href="#docker-图形化管理工具-portainer" class="header-anchor">#</a> docker 图形化管理工具 portainer</h2> <blockquote><p>portainer是什么？</p></blockquote> <p>Portainer是一个可视化的容器镜像的图形管理工具，利用Portainer可以轻松构建，管理和维护Docker环境。 而且完全免费，基于容器化的安装方式，方便高效部署。</p> <h3 id="安装-portainer"><a href="#安装-portainer" class="header-anchor">#</a> 安装 portainer</h3> <ol><li>下载portainer-ce镜像</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 下载最新的portainer-ce镜像</span>
+<span class="token function">docker</span> pull portainer/portainer-ce:latest
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol start="2"><li>创建portainer-ce的数据卷,用于存储portainer-ce的数据</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">docker</span> volume create portainer_data
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>创建portainer-ce容器</li></ol> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 创建并启动portainer-ce容器</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">8000</span>:8000 <span class="token parameter variable">-p</span> <span class="token number">9443</span>:9443 <span class="token parameter variable">--name</span> portainer <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token parameter variable">-v</span> portainer_data:/data portainer/portainer-ce:latest
+
+<span class="token comment"># 检查容器是否运行</span>
+<span class="token function">docker</span> <span class="token function">ps</span>
+
+<span class="token comment">## 参数介绍</span>
+<span class="token parameter variable">-d</span> <span class="token comment">#容器在后台运行</span>
+<span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000 <span class="token comment">#宿主机9000端口映射容器中的9000端口</span>
+<span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token comment"># 把宿主机的Docker守护进程(docker daemon)默认监听的Unix域套接字挂载到容器中</span>
+<span class="token parameter variable">-v</span> portainer_data:/data  <span class="token comment">#把宿主机目录 /portainer 挂载到容器 /data 目录；</span>
+–name portainer <span class="token comment"># 指定运行容器的名称</span>
+portainer/portainer-ce:latest <span class="token comment">#镜像的全称</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ol start="4"><li>浏览器登录portainer的管理界面<code>https://localhost:9443</code></li></ol> <p>初次登录需要先创建管理员账户。
+<img src="/assets/img/docker_20231024011143.bae5ba75.png" alt="docker_20231024011143.png"></p> <ol start="5"><li>portainer的主界面，具体用法请自行搜索。</li></ol> <p><img src="/assets/img/docker_20231024011330.73277575.png" alt="docker_20231024011330.png"> <img src="/assets/img/docker_20231024011544.f3f8e26b.png" alt="docker_20231024011544.png"></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">10/24/2023, 10:50:34 AM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#dockerfile" class="sidebar-link reco-side-dockerfile" data-v-b57cc07c>Dockerfile</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#dockerfile-文件中的常见指令" class="sidebar-link reco-side-dockerfile-文件中的常见指令" data-v-b57cc07c>dockerfile 文件中的常见指令</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-build-命令" class="sidebar-link reco-side-docker-build-命令" data-v-b57cc07c>docker build 命令</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#dockerfile-基于centos7镜像安装jdk" class="sidebar-link reco-side-dockerfile-基于centos7镜像安装jdk" data-v-b57cc07c>dockerfile 基于centos7镜像安装jdk</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#dockerfile-基于ubuntu镜像安装jdk" class="sidebar-link reco-side-dockerfile-基于ubuntu镜像安装jdk" data-v-b57cc07c>dockerfile 基于ubuntu镜像安装jdk</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#dockerfile-基于jdk镜像部署jar包" class="sidebar-link reco-side-dockerfile-基于jdk镜像部署jar包" data-v-b57cc07c>dockerfile 基于jdk镜像部署jar包</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-网络" class="sidebar-link reco-side-docker-网络" data-v-b57cc07c>Docker 网络</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker网络-相关的命令" class="sidebar-link reco-side-docker网络-相关的命令" data-v-b57cc07c>docker网络 相关的命令</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-网络的四种模式" class="sidebar-link reco-side-docker-网络的四种模式" data-v-b57cc07c>Docker 网络的四种模式</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#自定义网络" class="sidebar-link reco-side-自定义网络" data-v-b57cc07c>自定义网络</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-compose" class="sidebar-link reco-side-docker-compose" data-v-b57cc07c>Docker-compose</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#ubuntu安装docker-compose" class="sidebar-link reco-side-ubuntu安装docker-compose" data-v-b57cc07c>ubuntu安装docker-compose</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-compose常用命令" class="sidebar-link reco-side-docker-compose常用命令" data-v-b57cc07c>docker-compose常用命令</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-compose-yml文件" class="sidebar-link reco-side-docker-compose-yml文件" data-v-b57cc07c>docker-compose.yml文件</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-compose-创建-mysql和redis容器" class="sidebar-link reco-side-docker-compose-创建-mysql和redis容器" data-v-b57cc07c>docker-compose 创建 mysql和redis容器</a></li><li class="level-2" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#docker-图形化管理工具-portainer" class="sidebar-link reco-side-docker-图形化管理工具-portainer" data-v-b57cc07c>docker 图形化管理工具 portainer</a></li><li class="level-3" data-v-b57cc07c><a href="/blogs/Docker/Docker%E7%AC%94%E8%AE%B02.html#安装-portainer" class="sidebar-link reco-side-安装-portainer" data-v-b57cc07c>安装 portainer</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      随便看看把
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/assets/js/app.b5afc25e.js" defer></script><script src="/assets/js/7.b1dabc64.js" defer></script><script src="/assets/js/2.6db6176c.js" defer></script><script src="/assets/js/1.578a3538.js" defer></script><script src="/assets/js/81.286dd1ed.js" defer></script>
+  </body>
+</html>
