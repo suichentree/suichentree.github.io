@@ -1,0 +1,1 @@
+import{g as a,aa as e}from"./theme.H_zElHB3.js";var r=a((o,t)=>{let n;return t==="sandbox"&&(n=e("#i"+o)),(t==="sandbox"?e(n.nodes()[0].contentDocument.body):e("body")).select(`[id="${o}"]`)},"getDiagramElement");export{r as d};
